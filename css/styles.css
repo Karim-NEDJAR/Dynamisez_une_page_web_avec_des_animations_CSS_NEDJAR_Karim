@@ -1,5 +1,55 @@
+html {
+  box-sizing: border-box;
+}
+
 * {
+  box-sizing: inherit;
+}
+*::before {
+  box-sizing: inherit;
+}
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  max-width: 1920px;
+}
+
+.main {
+  width: 100%;
+}
+
+* a {
+  text-decoration: none;
+}
+* a:active {
+  text-decoration: none;
+}
+* a:visited {
+  text-decoration: none;
+}
+* a:link {
+  text-decoration: none;
+}
+* a:hover {
+  text-decoration: none;
+}
+
+html {
   font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 .font-titres {
@@ -14,6 +64,22 @@
   align-items: center;
   position: relative;
 }
+.header__back {
+  height: 20px;
+  width: 30px;
+  position: absolute;
+  top: 25px;
+  left: 23px;
+  visibility: hidden;
+}
+.header__back.visible {
+  visibility: visible;
+}
+.header__back i {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #353535;
+}
 .header__logo {
   width: 166px;
   height: 30px;
@@ -26,8 +92,66 @@
   object-fit: contain;
 }
 
-.coeur-vide {
-  font-family: FontAwesome;
+.pres {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.pres__ville {
+  width: 100%;
+  height: 4.1666666667rem;
+  background: linear-gradient(rgb(207, 207, 207) 0%, rgb(234, 234, 234) 12%);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.3rem;
+}
+.pres__ville > i {
+  font-size: 1.4rem;
+  height: 1.4rem;
+  display: inline-block;
+  width: 2.3rem;
+  padding-right: 0.5rem;
+  text-align: right;
+}
+.pres__ville > span {
+  font-size: 1.4rem;
+  height: 1.4rem;
+  display: inline-block;
+  width: 13rem;
+  padding-left: 0.7rem;
+  text-align: left;
+}
+.pres__reserv {
+  width: 100%;
+  height: 23.9166666667rem;
+  background-color: #f6f6f6;
+}
+
+.fonc {
+  width: 100%;
+  height: 440px;
+  background-color: #fff;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fonc {
+    height: auto;
+    background-color: green;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonc {
+    height: auto;
+    background-color: blue;
+  }
+}
+
+.rest {
+  width: 100%;
+  background-color: #f6f6f6;
 }
 
 /*# sourceMappingURL=styles.css.map */

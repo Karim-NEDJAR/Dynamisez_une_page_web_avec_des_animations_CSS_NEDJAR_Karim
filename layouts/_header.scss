@@ -6,6 +6,26 @@
     align-items: center;
     position: relative;
 
+    &__back {
+        height: 20px;
+        width: 30px;
+        position: absolute;
+        top: 25px;
+        left: 23px;
+        visibility: hidden;
+
+        &.visible {
+            visibility: visible;
+        }
+
+        & i {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #353535;
+        }
+
+    }
+
     &__logo {
         width: 166px;
         height: 30px;

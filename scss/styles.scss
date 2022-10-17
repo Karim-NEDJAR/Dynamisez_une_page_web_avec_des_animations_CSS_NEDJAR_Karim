@@ -1,8 +1,18 @@
 @import "../utils/variables";
 @import "../utils/functions";
 @import "../utils/mixins";
+
+@import "../base/norme";
 @import "../base/typography";
+
+@import "../components/btn";
+@import "../components/cards";
+
 @import "../layouts/header";
 @import "../layouts/main";
+@import "../layouts/footer";
+ 
+
+
 
 

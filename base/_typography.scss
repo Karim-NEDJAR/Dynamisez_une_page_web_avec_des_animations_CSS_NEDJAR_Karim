@@ -1,9 +1,20 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
 
+    @include tablette {
+        font-size: 15px;
+            }
 
-* {
-    font-family: 'Roboto', sans-serif ;
+    ;
+
+    @include ordinateur {
+        font-size: 18px;
+           }
+
 }
 
 .font-titres {
     font-family: 'Shrikhand', cursive;
 }
+

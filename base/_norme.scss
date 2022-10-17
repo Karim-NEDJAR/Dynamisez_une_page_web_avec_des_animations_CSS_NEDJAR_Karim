@@ -1,0 +1,52 @@
+/// B O X - S I Z I N G
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+
+    &::before {
+        box-sizing: inherit;
+    }
+
+    &::after {
+        box-sizing: inherit;
+    }
+
+}
+
+///body
+body {
+    width: 100%;
+    max-width: 1920px;
+}
+
+
+///main
+.main{
+    width: 100%;
+}
+
+
+/// link
+* a {
+    text-decoration: none;
+
+    &:active {
+        text-decoration: none;
+    }
+
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:link {
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+

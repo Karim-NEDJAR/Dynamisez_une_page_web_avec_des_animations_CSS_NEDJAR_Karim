@@ -1,0 +1,19 @@
+/// pour les media queries
+@mixin mobile {
+    @media screen and (max-width: $max-mobile) {
+        @content;
+    }
+}
+
+@mixin tablette {
+    @media screen and (min-width: $min-tablette) and (max-width: $max-tablette) {
+        @content;
+    }
+}
+
+@mixin ordinateur {
+    @media screen and (min-width: $min-ordinateur) {
+        @content;
+    }
+}
+
