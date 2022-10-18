@@ -1,0 +1,90 @@
+///section presentation / réservation
+.pres {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+
+    &__ville {
+        width: 100%;
+        height: calc(50/12)*1rem;
+        background: linear-gradient(rgba(207, 207, 207, 1) 0%, rgba(234, 234, 234, 1) 12%);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0.3rem;
+
+        &>i {
+            font-size: 1.4rem;
+            height: 1.4rem;
+            display: inline-block;
+            width: 2.3rem;
+            padding-right: 0.5rem;
+            text-align: right;
+        }
+
+        &>span {
+            font-size: 1.4rem;
+            height: 1.4rem;
+            display: inline-block;
+            width: 13rem;
+            padding-left: 0.7rem;
+            text-align: left;
+        }
+
+    }
+
+    &__reserv {
+        width: 100%;
+        background-color: $bg-reserv;
+        padding-top: calc(40/12)*1rem;
+                display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        
+        &--titre {
+            width: 100%;
+            height: calc(50/12)*1rem;
+            padding: 0 calc(64/12)*1rem 0 calc(50/12)*1rem;
+            font-size: calc(22/12)*1rem;
+            font-weight: bolder;
+            text-align: center;
+            word-spacing: 60%;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        &--soustitre {
+            width: 100%;
+            height: calc(64/12)*1rem;
+            padding: calc(18/12)*1rem calc(25/12)*1rem 0 calc(35/12)*1rem;
+            font-size: calc(18/12)*1rem;
+            font-weight: normal;
+            color: #353535;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 26px;
+
+        }
+
+        &--btn {
+            @include basic-btn (218, 50, 12);
+            background: linear-gradient(170deg, $secondaire, $primaire);
+            padding-left: calc(5/12)*1rem;
+            padding-bottom: calc(3/12)*1rem;
+            box-shadow: 0 calc(6/12)*1rem calc(6/12)*1rem #c5c5c5;
+            margin-bottom: calc(56/12)*1rem;
+
+            &>p {
+                color: #fff;
+                font-size: calc(16/12)*1rem;
+            }
+
+        }
+
+    }
+}

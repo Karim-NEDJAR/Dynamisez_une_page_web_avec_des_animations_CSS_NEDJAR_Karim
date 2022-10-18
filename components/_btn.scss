@@ -1,0 +1,21 @@
+/// mixin de création d'un bouton basique
+/// L'HTML du bouton comporte une balise p avec du texte,  encadrée par une div
+/// avec border-radius, sans bordure,   background gris et texte en blanc. 
+/// La mixin prend en paramètres: 
+/// (1) la largeur $w   (2) la hauteur $h   (3) la base $b (1rem = $b pixels)
+/// valeurs en pixels MAIS  SANS NOTER l'UNITé px (nombres purs dans les parenthèses)
+/// valeurs par défaut: 18rem = 216px, 4rem = 48px, 12. 
+/// Les dimensions seront réexprimées en unités rem 
+@mixin basic-btn ($w: 216, $h: 48, $b: 12) {
+    width: calc($w/$b)*1rem;
+    height: calc($h/$b)*1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: calc($h/(2*$b))*1rem;
+    border-top-right-radius: calc($h/(2*$b))*1rem;
+    border-bottom-left-radius: calc($h/(2*$b))*1rem;
+    border-top-left-radius: calc($h/(2*$b))*1rem;
+    background: #888;
+    color: #fff;
+}
