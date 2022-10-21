@@ -16,3 +16,45 @@
         @content;
     }
 }
+
+
+/// mixin de création d'un bouton basique
+/// L'HTML du bouton comporte une balise p avec du texte,  encadrée par une div
+/// avec border-radius, sans bordure,   background gris et texte en blanc. 
+/// La mixin prend en paramètres: 
+/// (1) la largeur $w   (2) la hauteur $h   (3) la base $b (1rem = $b pixels)
+/// valeurs en pixels MAIS  SANS NOTER l'UNITé px (nombres purs dans les parenthèses)
+/// valeurs par défaut: $w = 18rem = 216px, $h = 4rem = 48px, $b = 12. 
+/// Les dimensions seront réexprimées en unités rem 
+@mixin basic-btn ($w: 216, $h: 48, $b: 12) {
+    width: calc($w/$b)*1rem;
+    height: calc($h/$b)*1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: calc($h/(2*$b))*1rem;
+    border-top-right-radius: calc($h/(2*$b))*1rem;
+    border-bottom-left-radius: calc($h/(2*$b))*1rem;
+    border-top-left-radius: calc($h/(2*$b))*1rem;
+    background: #888;
+    color: #fff;
+}
+
+
+/// création de puces numérotées circulaires de taille 24 sur 24, font-size 14px
+@mixin puce-numerotee  {
+    width: calc(24/12)*1rem;
+    height: calc(24/12)*1rem;
+    font-size: calc(14/12)*1rem;
+       background-color: rgb(147,86,220); //hsl(178%, 158%, 144%);
+    border-top-left-radius: calc(10/12)*1rem;
+    border-top-right-radius: calc(12/12)*1rem;
+    border-bottom-left-radius: calc(12/12)*1rem;
+    border-bottom-right-radius: calc(12/12)*1rem;
+    color: #fff;
+    text-align: center;
+    margin:0;
+    padding-top: calc(6/12)*1rem;
+    }
+
+

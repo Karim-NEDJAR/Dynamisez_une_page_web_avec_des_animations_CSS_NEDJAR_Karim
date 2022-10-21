@@ -7,6 +7,8 @@
     align-items: center;
 
 
+
+
     &__ville {
         width: 100%;
         height: calc(50/12)*1rem;
@@ -41,13 +43,36 @@
         width: 100%;
         background-color: $bg-reserv;
         padding-top: calc(40/12)*1rem;
-                display: flex;
+        display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: center;
-        
+/*
+        @include tablette {
+            display: flex;
+            flex-flow: raw wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        @include ordinateur {
+            display: flex;
+            flex-flow: raw wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+*/
         &--titre {
             width: 100%;
+/*
+            @include tablette {
+                                width: 50%;
+            }
+
+            @include ordinateur {
+                                width: 50%;
+            }
+*/
             height: calc(50/12)*1rem;
             padding: 0 calc(64/12)*1rem 0 calc(50/12)*1rem;
             font-size: calc(22/12)*1rem;
@@ -60,6 +85,17 @@
 
         &--soustitre {
             width: 100%;
+
+            @include tablette {
+                width: 50%;
+               
+            }
+
+            @include ordinateur {
+                width: 50%;
+               
+            }
+
             height: calc(64/12)*1rem;
             padding: calc(18/12)*1rem calc(25/12)*1rem 0 calc(35/12)*1rem;
             font-size: calc(18/12)*1rem;
@@ -88,3 +124,58 @@
 
     }
 }
+
+///section fonctionnement
+.fonc {
+    width: 100%;
+    // height: 440px;
+    background-color: $bg-fonc;
+    padding: 0 calc(20/12)*1rem;
+
+    &__titre {
+        width: 100%;
+        height: calc(76/12)*1rem;
+        background: $bg-card-fonc;
+        margin-bottom: calc(20/12)*1rem;
+    }
+
+    @for $i from 1 through 3 {
+        &__carte#{$i} {
+            width: 100%;
+            height: calc(76/12)*1rem;
+            background: $bg-card-fonc;
+            margin-bottom: calc(20/12)*1rem;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+
+            & span {
+                display: inline-block;
+            }
+
+        }
+
+
+
+
+    }
+
+}
+
+//@include tablette {    height: auto;    } ;
+//@include ordinateur {    height: auto;   } ;
+
+
+
+
+///section restaurants
+.rest {
+    width: 100%;
+    //  height: 1226px;
+    background-color: $bg-rest;
+
+
+}
+
+// TESTS

@@ -57,6 +57,21 @@ html {
   font-family: "Shrikhand", cursive;
 }
 
+.puce-num {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.1666666667rem;
+  background-color: rgb(147, 86, 220);
+  border-top-left-radius: 0.8333333333rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
 .header {
   width: 100%;
   height: 64px;
@@ -91,24 +106,6 @@ html {
   height: 100%;
   width: 100%;
   object-fit: contain;
-}
-
-.fonc {
-  width: 100%;
-  height: 440px;
-  background-color: #fff;
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .fonc {
-    height: auto;
-    background-color: green;
-  }
-}
-@media screen and (min-width: 992px) {
-  .fonc {
-    height: auto;
-    background-color: blue;
-  }
 }
 
 .rest {
@@ -157,9 +154,33 @@ html {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  /*
+          @include tablette {
+              display: flex;
+              flex-flow: raw wrap;
+              justify-content: center;
+              align-items: flex-start;
+          }
+
+          @include ordinateur {
+              display: flex;
+              flex-flow: raw wrap;
+              justify-content: center;
+              align-items: flex-start;
+          }
+  */
 }
 .pres__reserv--titre {
   width: 100%;
+  /*
+              @include tablette {
+                                  width: 50%;
+              }
+
+              @include ordinateur {
+                                  width: 50%;
+              }
+  */
   height: 4.1666666667rem;
   padding: 0 5.3333333333rem 0 4.1666666667rem;
   font-size: 1.8333333333rem;
@@ -179,6 +200,16 @@ html {
   text-align: center;
   margin: 0;
   margin-bottom: 26px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .pres__reserv--soustitre {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .pres__reserv--soustitre {
+    width: 50%;
+  }
 }
 .pres__reserv--btn {
   width: 18.1666666667rem;
@@ -201,6 +232,57 @@ html {
 .pres__reserv--btn > p {
   color: #fff;
   font-size: 1.3333333333rem;
+}
+
+.fonc {
+  width: 100%;
+  background-color: #fff;
+  padding: 0 1.6666666667rem;
+}
+.fonc__titre {
+  width: 100%;
+  height: 6.3333333333rem;
+  background: #f6f6f6;
+  margin-bottom: 1.6666666667rem;
+}
+.fonc__carte1 {
+  width: 100%;
+  height: 6.3333333333rem;
+  background: #f6f6f6;
+  margin-bottom: 1.6666666667rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fonc__carte1 span {
+  display: inline-block;
+}
+.fonc__carte2 {
+  width: 100%;
+  height: 6.3333333333rem;
+  background: #f6f6f6;
+  margin-bottom: 1.6666666667rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fonc__carte2 span {
+  display: inline-block;
+}
+.fonc__carte3 {
+  width: 100%;
+  height: 6.3333333333rem;
+  background: #f6f6f6;
+  margin-bottom: 1.6666666667rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fonc__carte3 span {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -7,14 +7,14 @@ $tertiaire: #99E2D0;
 $bg-ville: #eaeaea;
 $bg-rest: #f6f6f6;
 $bg-fonc: #fff;
-$bg-reserv: $bg-rest;
-$bg-card-fonc: $bg-rest;
+$bg-reserv: #f6f6f6; // = $bg-rest;
+$bg-card-fonc: #f6f6f6; // = $bg-rest;
 $bg-card-fonc-hover: #f5edff;
 
 
 /// pour les media queries, 
 /// voir leur exploitation dans les mixins
 $max-mobile: 767px;
-$min-tablette:768px; //$max-mobile+1px;
+$min-tablette:768px; // = $max-mobile+1px;
 $max-tablette: 991px;
-$min-ordinateur: 992px; // $max-tablette+1px;
+$min-ordinateur: 992px; // = $max-tablette+1px;
