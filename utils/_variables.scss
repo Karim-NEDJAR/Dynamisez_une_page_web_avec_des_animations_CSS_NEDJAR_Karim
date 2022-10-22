@@ -3,13 +3,25 @@ $primaire: #9356DC;
 $secondaire: #FF79DA;
 $tertiaire: #99E2D0;
 
+///  couleurs de fonts /polices
+$c-soustitre : #353535;
+$c-fonc-ico: #7e7e7e;
+$c-ico-hover:  #9356dc; // == $bg-puce-num;
+
+
+
 /// background
 $bg-ville: #eaeaea;
 $bg-rest: #f6f6f6;
 $bg-fonc: #fff;
-$bg-reserv: #f6f6f6; // = $bg-rest;
+$bg-pres: #f6f6f6; // = $bg-rest;
 $bg-card-fonc: #f6f6f6; // = $bg-rest;
 $bg-card-fonc-hover: #f5edff;
+$bg-puce-num: #9356dc;
+
+///autres couleurs
+$c-btn-shadow: #c5c5c5;
+$c-carte-shadow: #e5e5e5;
 
 
 /// pour les media queries, 

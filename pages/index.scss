@@ -1,10 +1,12 @@
 ///section presentation / réservation
 .pres {
     width: 100%;
+    background-color: $bg-pres;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+
 
 
 
@@ -39,15 +41,9 @@
 
     }
 
-    &__reserv {
-        width: 100%;
-        background-color: $bg-reserv;
-        padding-top: calc(40/12)*1rem;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: center;
-/*
+
+
+    /*
         @include tablette {
             display: flex;
             flex-flow: raw wrap;
@@ -62,9 +58,9 @@
             align-items: flex-start;
         }
 */
-        &--titre {
-            width: 100%;
-/*
+    &__titre {
+        width: 100%;
+        /*
             @include tablette {
                                 width: 50%;
             }
@@ -73,56 +69,58 @@
                                 width: 50%;
             }
 */
-            height: calc(50/12)*1rem;
-            padding: 0 calc(64/12)*1rem 0 calc(50/12)*1rem;
-            font-size: calc(22/12)*1rem;
-            font-weight: bolder;
-            text-align: center;
-            word-spacing: 60%;
-            line-height: 1.2;
-            margin: 0;
-        }
+        height: calc(50/12)*1rem;
+        font-size: calc(22/12)*1rem;
+        font-weight: bolder;
+        text-align: center;
+        padding-right: calc(52/12)*1rem;
+        padding-left: calc(38/12)*1rem;
+        font-stretch: ultra-expanded;
+        letter-spacing: calc(1.2/12)*1rem;
+        line-height: 1.25;
+        margin: calc(39/12)*1rem 0 0 0;
 
-        &--soustitre {
-            width: 100%;
+    }
 
-            @include tablette {
-                width: 50%;
-               
-            }
+    &__soustitre {
+        width: 100%;
+        height: calc(64/12)*1rem;
+        font-size: calc(18/12)*1rem;
+        font-weight: normal;
+        color: $c-soustitre;
+        text-align: center;
+        margin: calc(18/12)*1rem 0 0 0;
+        padding-left: calc(12/12)*1rem;
 
-            @include ordinateur {
-                width: 50%;
-               
-            }
-
-            height: calc(64/12)*1rem;
-            padding: calc(18/12)*1rem calc(25/12)*1rem 0 calc(35/12)*1rem;
-            font-size: calc(18/12)*1rem;
-            font-weight: normal;
-            color: #353535;
-            text-align: center;
-            margin: 0;
-            margin-bottom: 26px;
+        @include tablette {
+            width: 50%;
 
         }
 
-        &--btn {
-            @include basic-btn (218, 50, 12);
-            background: linear-gradient(170deg, $secondaire, $primaire);
-            padding-left: calc(5/12)*1rem;
-            padding-bottom: calc(3/12)*1rem;
-            box-shadow: 0 calc(6/12)*1rem calc(6/12)*1rem #c5c5c5;
-            margin-bottom: calc(56/12)*1rem;
-
-            &>p {
-                color: #fff;
-                font-size: calc(16/12)*1rem;
-            }
+        @include ordinateur {
+            width: 50%;
 
         }
 
     }
+
+    &__btn {
+        @include basic-btn (218, 50, 12);
+        background: linear-gradient(170deg, $secondaire, $primaire);
+        padding-left: calc(4/12)*1rem;
+        box-shadow: 0 calc(6/12)*1rem calc(6/12)*1rem $c-btn-shadow;
+        margin-top: calc(8/12)*1rem;
+        margin-bottom: calc(56/12)*1rem;
+        margin-left: calc(5/12)*1rem;
+
+        &>p {
+            color: #fff;
+            font-size: calc(16/12)*1rem;
+        }
+
+    }
+
+    // }
 }
 
 ///section fonctionnement
@@ -130,28 +128,69 @@
     width: 100%;
     // height: 440px;
     background-color: $bg-fonc;
-    padding: 0 calc(20/12)*1rem;
+    padding: 0 calc(32/12)*1rem;
 
     &__titre {
         width: 100%;
-        height: calc(76/12)*1rem;
-        background: $bg-card-fonc;
-        margin-bottom: calc(20/12)*1rem;
+        height: calc(70/12)*1rem;
+        margin: calc(22/12)*1rem 0 calc(8/12)*1rem 0;
+        padding-top: calc(10/12)*1rem;
+        position: relative;
+        left: calc(-12/12)*1rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        &--size {
+            font-size: calc(24/12)*1rem;
+            margin: 0;
+            font-weight: bold;
+        }
     }
 
     @for $i from 1 through 3 {
         &__carte#{$i} {
             width: 100%;
-            height: calc(76/12)*1rem;
-            background: $bg-card-fonc;
+            height: calc(80/12)*1rem;
+            padding-top: calc(12/12)*1rem;
+            background: linear-gradient(#fefefe 0%, $bg-card-fonc 8%);
             margin-bottom: calc(20/12)*1rem;
             display: flex;
             flex-flow: row nowrap;
             justify-content: flex-start;
             align-items: center;
+            @include radius-maker (calc(80/4));
+            box-shadow: 0 calc(8/12)*1rem calc(8/12)*1rem $c-carte-shadow;
 
-            & span {
+            &:hover {
+                background: $bg-card-fonc-hover;
+
+                & span:nth-child(2) {
+                    color: $c-ico-hover;
+                }
+            }
+
+            & span:nth-child(1) {
                 display: inline-block;
+                position: relative;
+                left: calc(-12/12)*1rem;
+
+            }
+
+            & span:nth-child(2) {
+                display: inline-block;
+                margin-left: calc(10/12)*1rem;
+                font-size: calc(18/12)*1rem;
+                color: $c-fonc-ico;
+
+            }
+
+            & span:nth-child(3) {
+                display: inline-block;
+                margin-left: calc(28/12)*1rem;
+                font-size: calc(18/12)*1rem;
+                font-weight: bold;
             }
 
         }
