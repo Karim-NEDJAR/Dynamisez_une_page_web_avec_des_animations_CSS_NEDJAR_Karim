@@ -19,15 +19,19 @@ $bg-pres: #f6f6f6; // = $bg-rest;
 $bg-card-fonc: #f6f6f6; // = $bg-rest;
 $bg-card-fonc-hover: #f5edff;
 $bg-puce-num: #9356dc;
+$bg-footer: #353535; 
 
 ///autres couleurs
 $c-btn-shadow: #c5c5c5;
 $c-carte-shadow: #e5e5e5;
 
 
-/// pour les media queries, 
+/// pour les media queries (MQ), 
 /// voir leur exploitation dans les mixins
 $max-mobile: 767px;
 $min-tablette:768px; // = $max-mobile+1px;
 $max-tablette: 991px;
 $min-ordinateur: 992px; // = $max-tablette+1px;
+
+/// taille de police par défaut pour le mobile, valeur modifiée dans les MQ, voir _typography.scss
+$fontsize: 12;

@@ -113,6 +113,28 @@ html {
   object-fit: contain;
 }
 
+.footer {
+  width: 100%;
+  height: 16.6666666667rem;
+  background-color: #353535;
+  padding: 0 2.0833333333rem;
+  color: white;
+}
+.footer__logo {
+  width: 8.3333333333rem;
+  height: 1.6666666667rem;
+  overflow: hidden;
+}
+.footer__logo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert 1;
+}
+.footer__contact > a {
+  color: white !important;
+}
+
 .pres {
   width: 100%;
   background-color: #f6f6f6;
@@ -120,21 +142,6 @@ html {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  /*
-          @include tablette {
-              display: flex;
-              flex-flow: raw wrap;
-              justify-content: center;
-              align-items: flex-start;
-          }
-
-          @include ordinateur {
-              display: flex;
-              flex-flow: raw wrap;
-              justify-content: center;
-              align-items: flex-start;
-          }
-  */
 }
 .pres__ville {
   width: 100%;
@@ -164,15 +171,6 @@ html {
 }
 .pres__titre {
   width: 100%;
-  /*
-              @include tablette {
-                                  width: 50%;
-              }
-
-              @include ordinateur {
-                                  width: 50%;
-              }
-  */
   height: 4.1666666667rem;
   font-size: 1.8333333333rem;
   font-weight: bolder;
@@ -231,7 +229,7 @@ html {
 .fonc {
   width: 100%;
   background-color: #fff;
-  padding: 0 2.6666666667rem 0 1.6666666667rem 0;
+  padding: 0 1.6666666667rem 0 2.6666666667rem;
 }
 .fonc__titre {
   width: 100%;
@@ -285,7 +283,7 @@ html {
 }
 .fonc__carte1 span:nth-child(3) {
   display: inline-block;
-  margin-left: 2.25rem;
+  margin-left: 1.6666666667rem;
   font-size: 1.3333333333rem;
   font-weight: bold;
 }
@@ -324,7 +322,7 @@ html {
 }
 .fonc__carte2 span:nth-child(3) {
   display: inline-block;
-  margin-left: 2.25rem;
+  margin-left: 1.6666666667rem;
   font-size: 1.3333333333rem;
   font-weight: bold;
 }
@@ -363,7 +361,7 @@ html {
 }
 .fonc__carte3 span:nth-child(3) {
   display: inline-block;
-  margin-left: 2.25rem;
+  margin-left: 1.6666666667rem;
   font-size: 1.3333333333rem;
   font-weight: bold;
 }
@@ -372,14 +370,21 @@ html {
   width: 100%;
   background-color: #f6f6f6;
   padding: 0 1.6666666667rem;
+  margin-top: 5.5rem;
+}
+.resto__titre {
+  width: 100%;
+  height: 6rem;
+  padding-top: 5.5rem;
+  margin-bottom: 2.8333333333rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 .resto1 {
   width: 100%;
   height: 20.9166666667rem;
-  border-top-left-radius: 1.0833333333rem;
-  border-top-right-radius: 1.0833333333rem;
-  border-bottom-left-radius: 1.0833333333rem;
-  border-bottom-right-radius: 1.0833333333rem;
   margin-bottom: 1.5rem;
 }
 .resto1__photo {
@@ -396,12 +401,20 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-top-left-radius: 1.0833333333rem;
+  border-top-right-radius: 1.0833333333rem;
+  object-position: bottom;
 }
 .resto1__photo--message {
   width: 6.5833333333rem;
   height: 2.4166666667rem;
   color: #008766;
   background-color: #99E2D0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1666666667rem;
   visibility: visible;
   z-index: 2;
   position: absolute;
@@ -417,32 +430,46 @@ html {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  overflow: hidden;
+  margin: 0;
+  padding-left: 0.8333333333rem;
+  border-bottom-left-radius: 1.0833333333rem;
+  border-bottom-right-radius: 1.0833333333rem;
 }
 .resto1__infos--nom {
-  width: 100%;
-  font-size: 1.3333333333rem;
+  width: 20.6666666667rem;
+  height: 3.2083333333rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
 }
 .resto1__infos--localisation {
-  width: 100%;
-  font-size: 1.3333333333rem;
+  width: 20.6666666667rem;
+  height: 3.2083333333rem;
+  font-size: 1.4166666667rem;
   font-weight: normal;
+  margin: 0;
 }
 .resto1__infos--jaime {
   width: 6.4166666667rem;
   height: 6.4166666667rem;
-  padding-left: 0.4166666667rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1.0833333333rem;
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: lighter;
 }
 .resto2 {
   width: 100%;
   height: 20.9166666667rem;
-  border-top-left-radius: 1.0833333333rem;
-  border-top-right-radius: 1.0833333333rem;
-  border-bottom-left-radius: 1.0833333333rem;
-  border-bottom-right-radius: 1.0833333333rem;
   margin-bottom: 1.5rem;
 }
 .resto2__photo {
@@ -459,12 +486,21 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-top-left-radius: 1.0833333333rem;
+  border-top-right-radius: 1.0833333333rem;
+  object-position: bottom;
+  object-position: 50% 61%;
 }
 .resto2__photo--message {
   width: 6.5833333333rem;
   height: 2.4166666667rem;
   color: #008766;
   background-color: #99E2D0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1666666667rem;
   visibility: visible;
   z-index: 2;
   position: absolute;
@@ -480,32 +516,46 @@ html {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  overflow: hidden;
+  margin: 0;
+  padding-left: 0.8333333333rem;
+  border-bottom-left-radius: 1.0833333333rem;
+  border-bottom-right-radius: 1.0833333333rem;
 }
 .resto2__infos--nom {
-  width: 100%;
-  font-size: 1.3333333333rem;
+  width: 20.6666666667rem;
+  height: 3.2083333333rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
 }
 .resto2__infos--localisation {
-  width: 100%;
-  font-size: 1.3333333333rem;
+  width: 20.6666666667rem;
+  height: 3.2083333333rem;
+  font-size: 1.4166666667rem;
   font-weight: normal;
+  margin: 0;
 }
 .resto2__infos--jaime {
   width: 6.4166666667rem;
   height: 6.4166666667rem;
-  padding-left: 0.4166666667rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1.0833333333rem;
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: lighter;
 }
 .resto3 {
   width: 100%;
   height: 20.9166666667rem;
-  border-top-left-radius: 1.0833333333rem;
-  border-top-right-radius: 1.0833333333rem;
-  border-bottom-left-radius: 1.0833333333rem;
-  border-bottom-right-radius: 1.0833333333rem;
   margin-bottom: 1.5rem;
 }
 .resto3__photo {
@@ -522,12 +572,20 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-top-left-radius: 1.0833333333rem;
+  border-top-right-radius: 1.0833333333rem;
+  object-position: bottom;
 }
 .resto3__photo--message {
   width: 6.5833333333rem;
   height: 2.4166666667rem;
   color: #008766;
   background-color: #99E2D0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1666666667rem;
   visibility: hidden;
   z-index: -1;
   position: absolute;
@@ -543,33 +601,47 @@ html {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  overflow: hidden;
+  margin: 0;
+  padding-left: 0.8333333333rem;
+  border-bottom-left-radius: 1.0833333333rem;
+  border-bottom-right-radius: 1.0833333333rem;
 }
 .resto3__infos--nom {
-  width: 100%;
-  font-size: 1.3333333333rem;
+  width: 20.6666666667rem;
+  height: 3.2083333333rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
 }
 .resto3__infos--localisation {
-  width: 100%;
-  font-size: 1.3333333333rem;
+  width: 20.6666666667rem;
+  height: 3.2083333333rem;
+  font-size: 1.4166666667rem;
   font-weight: normal;
+  margin: 0;
 }
 .resto3__infos--jaime {
   width: 6.4166666667rem;
   height: 6.4166666667rem;
-  padding-left: 0.4166666667rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1.0833333333rem;
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: lighter;
 }
 .resto4 {
   width: 100%;
   height: 20.9166666667rem;
-  border-top-left-radius: 1.0833333333rem;
-  border-top-right-radius: 1.0833333333rem;
-  border-bottom-left-radius: 1.0833333333rem;
-  border-bottom-right-radius: 1.0833333333rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 5.4166666667rem;
 }
 .resto4__photo {
   width: 100%;
@@ -585,12 +657,20 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-top-left-radius: 1.0833333333rem;
+  border-top-right-radius: 1.0833333333rem;
+  object-position: bottom;
 }
 .resto4__photo--message {
   width: 6.5833333333rem;
   height: 2.4166666667rem;
   color: #008766;
   background-color: #99E2D0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1666666667rem;
   visibility: hidden;
   z-index: -1;
   position: absolute;
@@ -606,24 +686,42 @@ html {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  overflow: hidden;
+  margin: 0;
+  padding-left: 0.8333333333rem;
+  border-bottom-left-radius: 1.0833333333rem;
+  border-bottom-right-radius: 1.0833333333rem;
 }
 .resto4__infos--nom {
-  width: 100%;
-  font-size: 1.3333333333rem;
+  width: 20.6666666667rem;
+  height: 3.2083333333rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
 }
 .resto4__infos--localisation {
-  width: 100%;
-  font-size: 1.3333333333rem;
+  width: 20.6666666667rem;
+  height: 3.2083333333rem;
+  font-size: 1.4166666667rem;
   font-weight: normal;
+  margin: 0;
 }
 .resto4__infos--jaime {
   width: 6.4166666667rem;
   height: 6.4166666667rem;
-  padding-left: 0.4166666667rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1.0833333333rem;
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: lighter;
 }
 
 /*# sourceMappingURL=styles.css.map */

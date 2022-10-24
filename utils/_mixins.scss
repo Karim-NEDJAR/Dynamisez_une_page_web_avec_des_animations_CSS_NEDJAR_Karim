@@ -40,14 +40,29 @@
     color: #fff;
 }
 
-/// création des arrondis, en paramètre la valeur de l'arrondi 
-/// en pixels sans l'unité px, donner un nombre pur.
-@mixin radius-maker ($arrondi: 12) {
-    border-top-left-radius: calc($arrondi/12)*1rem;
-    border-top-right-radius: calc($arrondi/12)*1rem;
-    border-bottom-left-radius: calc($arrondi/12)*1rem;
-    border-bottom-right-radius: calc($arrondi/12)*1rem;
+
+/// création d'arrondis tous identiques, en paramètre le côté 
+/// termes acceptés: "right", "left", "top", "bottom" et  "all"
+/// la valeur de l'arrondi en pixels sans l'unité px (nombre pur). 
+
+@mixin makeradius ($side: "all", $arrondi: 12) {
+    @if (($side =="all") or ($side =="top") or ($side =="left")) {
+        border-top-left-radius: calc($arrondi/12)*1rem;
+    }
+
+    @if (($side =="all") or ($side =="top") or ($side =="right")) {
+        border-top-right-radius: calc($arrondi/12)*1rem;
+    }
+
+    @if (($side =="all") or ($side =="bottom") or ($side =="left")) {
+        border-bottom-left-radius: calc($arrondi/12)*1rem;
+    }
+
+    @if (($side =="all") or ($side =="bottom") or ($side =="right")) {
+        border-bottom-right-radius: calc($arrondi/12)*1rem;
+    }
 }
+
 
 
 /// création de puces numérotées circulaires de taille 24 sur 24, font-size 14px
@@ -60,5 +75,5 @@
     text-align: center;
     margin: 0;
     padding-top: calc(6/12)*1rem;
-    @include radius-maker;
+    @include makeradius;
 }

@@ -1,15 +1,18 @@
 html {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
+    $fontsize: 12;
 
     @include tablette {
         font-size: 15px;
+        $fontsize: 15;
             }
 
     ;
 
     @include ordinateur {
         font-size: 18px;
+        $fontsize: 18;
            }
 
 }
