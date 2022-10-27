@@ -65,7 +65,8 @@
 
 
 
-/// création de puces numérotées circulaires de taille 24 sur 24, font-size 14px
+/// création de puces numérotées circulaires 
+/// spécifiquement de taille 24 sur 24, font-size 14px
 @mixin puce-numerotee {
     width: calc(24/12)*1rem;
     height: calc(24/12)*1rem;
@@ -77,3 +78,19 @@
     padding-top: calc(6/12)*1rem;
     @include makeradius;
 }
+
+/// dimentionnement et initialisation d'un pseudo-élément 
+/// (utile pour les transitions de translation / opacité  
+/// pseudo-élément  à utiliser avec la la propriété  opacity  
+/// laquelle permet de faire des transitions de couleur sans que 
+/// le navigateur ne fasse des calculs de type “paint”.  )
+@mixin init-pseudo-element {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+

@@ -96,9 +96,9 @@
         }
 
         &:hover {
-            background: linear-gradient(170deg, lighten($secondaire,5%), lighten($primaire,5%));
+            background: linear-gradient(170deg, lighten($secondaire, 5%), lighten($primaire, 5%));
             box-shadow: 0 calc(6/12)*1rem calc(6/12)*1rem darken($c-btn-shadow, 15%);
-          
+
         }
     }
 
@@ -325,6 +325,7 @@
                         color: #fff;
                         -webkit-text-stroke: 1px black;
 
+
                         &:hover {
                             -webkit-text-stroke: 0px;
                             background: linear-gradient(180deg, $primaire 0%, $secondaire 100%);
@@ -334,9 +335,7 @@
                             transition: color 500ms ease-in-out;
                         }
                     }
-
                 }
-
 
 
             }
@@ -345,11 +344,14 @@
 
         }
 
-        // end for
+
 
     }
 
-
-
+    // end FOR
 
 }
+
+
+
+
