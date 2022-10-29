@@ -307,7 +307,7 @@
 
                 }
 
-                &--jaime {
+                 &--jaime {
                     width: calc(77/12)*1rem;
                     height: calc(77/12)*1rem;
                     padding-left: calc(6/12)*1rem;
@@ -328,30 +328,37 @@
 
                         &:hover {
                             -webkit-text-stroke: 0px;
-                            background: linear-gradient(180deg, $primaire 0%, $secondaire 100%);
+                            background: linear-gradient(200deg, $primaire 0%, $secondaire 100%);
                             background-clip: text;
                             -webkit-background-clip: text;
                             color: transparent;
                             transition: color 500ms ease-in-out;
                         }
                     }
-                }
+                } 
+                //fin de --jaime
+
+
+
+               
+
+
 
 
             }
+
+            // fin de __infos
 
 
 
         }
 
+        // fin de resto{i}
+
 
 
     }
 
-    // end FOR
+    // end de FOR
 
 }
-
-
-
-
