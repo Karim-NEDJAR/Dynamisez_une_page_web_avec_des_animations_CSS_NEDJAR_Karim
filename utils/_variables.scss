@@ -15,8 +15,8 @@ $c-ico-hover:  #9356dc; // == $bg-puce-num;
 $bg-ville: #eaeaea;
 $bg-rest: #f6f6f6;
 $bg-fonc: #fff;
-$bg-pres: #f6f6f6; // = $bg-rest;
-$bg-card-fonc: #f6f6f6; // = $bg-rest;
+$bg-pres: #f6f6f6; // == $bg-rest;
+$bg-card-fonc: #f6f6f6; // == $bg-rest;
 $bg-card-fonc-hover: #f5edff;
 $bg-puce-num: #9356dc;
 $bg-footer: #353535; 
@@ -35,3 +35,14 @@ $min-ordinateur: 992px; // = $max-tablette+1px;
 
 /// taille de police par défaut pour le mobile, valeur modifiée dans les MQ, voir _typography.scss
 $fontsize: 12;
+
+/// variable loading spinner
+/// couleur  primaire avec  luminosité  qui passe de 143 à 79 
+/// soit hsl(179, 152, 143) ==> hsl(179, 152, 79)
+$primaire-sombre: rgb(82, 31, 137);
+
+
+
+
+
+

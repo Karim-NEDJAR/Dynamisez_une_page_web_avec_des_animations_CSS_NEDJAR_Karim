@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box;
 }
@@ -79,11 +80,11 @@ html {
     transform: scaleX(1) scaleY(1);
     opacity: 0.9;
   }
-  90% {
+  93% {
     transform: scaleX(1) scaleY(0.2);
     opacity: 0.9;
   }
-  95% {
+  97% {
     transform: scaleX(0.2) scaleY(0.2);
     opacity: 0.9;
   }
@@ -92,15 +93,7 @@ html {
     opacity: 0;
   }
 }
-@keyframes tournicoti {
-  from {
-    transform: rotate(0deg) scale(1) translate(-0.1vw, 0.1vw);
-  }
-  to {
-    transform: rotate(360deg) scale(1.05) translate(0.1vw, -0.1vw);
-  }
-}
-@keyframes tournecentre {
+@keyframes sens-horaire {
   from {
     transform: rotate(0deg);
   }
@@ -108,130 +101,41 @@ html {
     transform: rotate(360deg);
   }
 }
+@keyframes sens-anti-horaire {
+  from {
+    transform: rotate 0deg;
+  }
+  to {
+    transform: rotate -360deg;
+  }
+}
 @keyframes opacification {
   from {
-    opacity: 0.2;
+    opacity: 0;
   }
   to {
     opacity: 1;
   }
 }
-.loading-land {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background-image: radial-gradient(circle, rgb(234, 234, 234) 33%, rgba(234, 234, 234, 0.8) 66%, rgba(234, 234, 234, 0.6) 100%);
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  opacity: 0.95;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  transform-origin: left top;
-  animation: volatilisation 2800ms forwards;
-  overflow: hidden;
+@keyframes invisibilisation {
+  0%, 90% {
+    opacity: 1;
+  }
+  90%, 100% {
+    opacity: 0;
+  }
 }
-.loading-land .manege {
-  z-index: 2;
-  background: transparent;
-  width: 7vw;
-  height: 7vw;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  animation: tournicoti 1000ms linear infinite forwards;
-  overflow: hidden;
-}
-.loading-land .manege__haut {
-  border: 0.4vw dotted #9356DC;
-  padding: 0.2vw;
-  background: #FF79DA;
-  background-clip: content-box;
-  width: 2vw;
-  height: 2vw;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  margin: 0;
-}
-.loading-land .manege__milieu {
-  width: 100%;
-  height: 2vw;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-}
-.loading-land .manege__milieu--gauche {
-  border: 0.4vw dotted #9356DC;
-  padding: 0.2vw;
-  background: #FF79DA;
-  background-clip: content-box;
-  width: 2vw;
-  height: 2vw;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  margin: 0;
-}
-.loading-land .manege__milieu--centre {
-  border: 0.4vw dotted #9356DC;
-  padding: 0.2vw;
-  background: #FF79DA;
-  background-clip: content-box;
-  width: 2vw;
-  height: 2vw;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  animation: tournecentre 888ms cubic-bezier(0.45, 0.1, 0.6, 0.9) infinite alternate-reverse;
-}
-.loading-land .manege__milieu--droite {
-  border: 0.4vw dotted #9356DC;
-  padding: 0.2vw;
-  background: #FF79DA;
-  background-clip: content-box;
-  width: 2vw;
-  height: 2vw;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  margin: 0;
-}
-.loading-land .manege__bas {
-  border: 0.4vw dotted #9356DC;
-  padding: 0.2vw;
-  background: #FF79DA;
-  background-clip: content-box;
-  width: 2vw;
-  height: 2vw;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  margin: 0;
-}
-
-/*
-
-.loading-land {
+/* .loading-land {
     position: fixed;
     z-index: 2;
     top: 0;
     left: 0;
-    top:0;
-    bottom:0;
-    background-image: radial-gradient(rgba(153, 226, 208, 1) 50%, rgba(153, 226, 208, 0.7) 80%, rgba(153, 226, 208, 0.5) 100%);
+    top: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle,
+            rgb(234, 234, 234, 1) 33%,
+            rgba(234, 234, 234, 0.8) 66%,
+            rgba(234, 234, 234, 0.6) 100%);
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -240,35 +144,38 @@ html {
     justify-content: center;
     align-items: center;
     transform-origin: left top;
-    animation: volatilisation 2500ms ease-in-out forwards;
+    animation: volatilisation 3000ms forwards;
     overflow: hidden;
 
 
 
     & .manege {
-        z-index: 2;
+        z-index: 3;
         background: transparent;
-        width: 10vw;
-        height: 10vw;
+        width: 7vw;
+        height: 7vw;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-       // animation-iteration-count: 5;
-        animation: tournicoti 500ms linear infinite;
+        animation: sens-horaire 1777ms linear infinite forwards;
         overflow: hidden;
 
+
         &__haut {
-            background: linear-gradient(0deg, rgba(147, 86, 219, 1) 33%, rgba(255, 120, 217, 1) 66%,
-                    rgba(255, 120, 217, 1) 100%);
-            width: 2vw;
-            height: 4vw;
-            border: 3px solid $primaire-sombre;
-            border-top-left-radius: 200%;
-            border-top-right-radius: 200%;
-            border-bottom-left-radius: 50%;
-            border-bottom-right-radius:50%;
-            margin: 0;
+            @include spinner-haut-et-bas ($primaire) {
+                border-width: 0.05vw 0.1vw 0.7vw 0.1vw;
+            }
+
+
+        }
+
+        &__bas {
+
+            @include spinner-haut-et-bas ($secondaire) {
+                border-width: 0.7vw 0.1vw 0.05vw 0.1vw;
+            }
+
 
         }
 
@@ -280,74 +187,134 @@ html {
             justify-content: center;
             align-items: center;
             background: transparent;
-            margin: 0;
 
+            &--droite {
 
-
-            &--gauche {
-                border: 3px solid $primaire-sombre;
-                background: linear-gradient(-90deg, rgba(147, 86, 219, 1) 33%, rgba(255, 120, 217, 1) 66%,
-                        rgba(255, 120, 217, 1) 100%);
-                width: 4vw;
-                height: 2vw;
-                border-top-left-radius: 200%;
-                border-bottom-left-radius: 200%;
-                border-top-right-radius: 50%;
-                border-bottom-right-radius: 50%;
-                margin: 0;
-
+                @include spinner-droite-et-gauche ($primaire);
             }
 
             &--centre {
-                border: 5px dashed black;
-                background-image: radial-gradient(circle,
-                        rgba(147, 86, 219, 1) 33%,
-                        rgba(255, 120, 217, 1) 66%,
-                        rgba(255, 120, 217, 1) 100%);
+                border: 0.55vw dotted $primaire;
+                padding: 0.25vw;
+                background: $primaire;
+                background-clip: padding-box;
                 width: 2vw;
                 height: 2vw;
-                border-top-left-radius: 50%;
-                border-bottom-left-radius: 50%;
-                border-top-right-radius: 50%;
-                border-bottom-right-radius: 50%;
-                margin: 0;
+                @include radius-50;
+                animation: invisibilisation 300ms linear infinite alternate ;
 
             }
-            &--droite {
-                background: linear-gradient(90deg, rgba(147, 86, 219, 1) 33%, rgba(255, 120, 217, 1) 66%,
-                        rgba(255, 120, 217, 1) 100%);
-                width: 4vw;
-                height: 2vw;
-                border: 3px solid $primaire-sombre;
-                border-top-left-radius: 50%;
-                border-bottom-left-radius: 50%;
-                border-top-right-radius: 200%;
-                border-bottom-right-radius: 200%;
-                margin: 0;
+
+            &--gauche {
+
+                @include spinner-droite-et-gauche ($secondaire);
 
             }
 
         }
 
-        //fin milieu 
-        &__bas {
-            background: linear-gradient(180deg, rgba(147, 86, 219, 1) 33%, rgba(255, 120, 217, 1) 66%,
-                    rgba(255, 120, 217, 1) 100%);
-            width: 2vw;
-            height: 4vw;
-            border: 3px solid $primaire-sombre;
-            border-top-left-radius: 50%; 
-            border-top-right-radius: 50%;
-            border-bottom-left-radius: 200%;
-            border-bottom-right-radius: 200%;
-            margin: 0;
-
-        }
 
     }
 
 }
 */
+.loading-land {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgb(153, 226, 208) 50%, rgba(153, 226, 208, 0.7) 80%, rgba(153, 226, 208, 0.5) 100%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  opacity: 0.95;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  transform-origin: left top;
+  animation: volatilisation 2500ms ease-in-out forwards;
+  overflow: hidden;
+}
+.loading-land .manege {
+  z-index: 2;
+  background: transparent;
+  width: 10vw;
+  height: 10vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  animation: sens-horaire 500ms linear infinite;
+  overflow: hidden;
+}
+.loading-land .manege__haut {
+  background: linear-gradient(0deg, rgb(147, 86, 219) 33%, rgb(255, 120, 217) 66%, rgb(255, 120, 217) 100%);
+  width: 2vw;
+  height: 4vw;
+  border: 3px solid rgb(82, 31, 137);
+  border-top-left-radius: 200%;
+  border-top-right-radius: 200%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  margin: 0;
+}
+.loading-land .manege__milieu {
+  width: 100%;
+  height: 2vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin: 0;
+}
+.loading-land .manege__milieu--gauche {
+  border: 3px solid rgb(82, 31, 137);
+  background: linear-gradient(-90deg, rgb(147, 86, 219) 33%, rgb(255, 120, 217) 66%, rgb(255, 120, 217) 100%);
+  width: 4vw;
+  height: 2vw;
+  border-top-left-radius: 200%;
+  border-bottom-left-radius: 200%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  margin: 0;
+}
+.loading-land .manege__milieu--centre {
+  border: 5px dashed black;
+  background-image: radial-gradient(circle, rgb(147, 86, 219) 33%, rgb(255, 120, 217) 66%, rgb(255, 120, 217) 100%);
+  width: 2vw;
+  height: 2vw;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  margin: 0;
+}
+.loading-land .manege__milieu--droite {
+  background: linear-gradient(90deg, rgb(147, 86, 219) 33%, rgb(255, 120, 217) 66%, rgb(255, 120, 217) 100%);
+  width: 4vw;
+  height: 2vw;
+  border: 3px solid rgb(82, 31, 137);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 200%;
+  border-bottom-right-radius: 200%;
+  margin: 0;
+}
+.loading-land .manege__bas {
+  background: linear-gradient(180deg, rgb(147, 86, 219) 33%, rgb(255, 120, 217) 66%, rgb(255, 120, 217) 100%);
+  width: 2vw;
+  height: 4vw;
+  border: 3px solid rgb(82, 31, 137);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 200%;
+  border-bottom-right-radius: 200%;
+  margin: 0;
+}
+
 .header {
   width: 100%;
   height: 64px;
@@ -547,7 +514,7 @@ html {
   font-size: 1.3333333333rem;
 }
 .pres__btn:hover {
-  background: linear-gradient(170deg, #ff93e1, #a16be0);
+  background: linear-gradient(170deg, #ff8de0, #9e67e0);
   box-shadow: 0 0.5rem 0.5rem #9f9f9f;
 }
 
@@ -1095,6 +1062,331 @@ html {
   -webkit-background-clip: text;
   color: transparent;
   transition: color 500ms ease-in-out;
+}
+
+.restaurant {
+  width: 100%;
+  margin: 0;
+}
+.restaurant .devanture {
+  width: 100%;
+  height: 21.5rem;
+  margin: 0;
+  overflow: hidden;
+}
+.restaurant .devanture > img {
+  width: 100%;
+  height: 105%;
+  object-fit: cover;
+}
+.restaurant .menu {
+  position: relative;
+  top: -3.1666666667rem;
+  background: #f6f6f6;
+  margin: 0;
+  padding: 1rem;
+  border-top-left-radius: 3.1666666667rem;
+  border-top-right-radius: 3.1666666667rem;
+  /* & h1 {
+      margin:0;
+  }*/
+}
+.restaurant .menu__resto {
+  height: 4.8333333333rem;
+  background-color: white;
+  padding-left: 0.8333333333rem;
+  padding-right: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.3333333333rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6f6f6;
+  border: 1px solid red;
+  padding-bottom: 1.3333333333rem;
+}
+.restaurant .menu__resto--nom {
+  color: #101010;
+  font-size: 2.3333333333rem;
+  font-weight: normal;
+  padding-left: 0.4166666667rem;
+  margin-top: 1.5rem;
+}
+.restaurant .menu__resto--jaime {
+  position: relative;
+  /*  &>i {
+          color: $bg-rest; //la même couleur que le bg 
+          -webkit-text-stroke: 1px black;
+          font-size: calc(22/12)*1rem;
+          display: inline-block;
+          width: calc(22/12)*1rem;
+          height: calc(22/12)*1rem;
+          transition: color 500ms ease-in-out;
+
+
+          &:hover {
+              -webkit-text-stroke: 0px;
+              background: linear-gradient(200deg, $primaire 0%, $secondaire 100%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+
+          }
+
+  }*/
+}
+.restaurant .menu__resto--jaime .fa-heart {
+  font-size: 1.8333333333rem;
+}
+.restaurant .menu__resto--jaime .fa-solid {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  background: linear-gradient(200deg, #9356DC 0%, #FF79DA 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: opacity 333ms ease-in;
+}
+.restaurant .menu__resto--jaime .fa-solid:hover {
+  opacity: 1;
+  filter: contrast(1.3);
+}
+.restaurant .menu__entree__titre {
+  height: 3.3333333333rem;
+  color: #1f1f1f;
+  font-size: 1.3333333333rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  /*soulignement du titre  sur 40px */
+}
+.restaurant .menu__entree__titre::after {
+  content: "";
+  display: block;
+  width: 3.3333333333rem;
+  padding-top: 0.4166666667rem;
+  border-bottom: 0.25rem solid #99E2D0;
+}
+.restaurant .menu__entree-1 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid red;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant .menu__entree-1__recette {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.restaurant .menu__entree-1__recette--nom {
+  height: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.restaurant .menu__entree-1__recette--detail {
+  height: 50%;
+  font-size: 1.1666666667rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+}
+.restaurant .menu__entree-2 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid red;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant .menu__entree-2__recette {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.restaurant .menu__entree-2__recette--nom {
+  height: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.restaurant .menu__entree-2__recette--detail {
+  height: 50%;
+  font-size: 1.1666666667rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+}
+.restaurant .menu__entree-3 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid red;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant .menu__entree-3__recette {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.restaurant .menu__entree-3__recette--nom {
+  height: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.restaurant .menu__entree-3__recette--detail {
+  height: 50%;
+  font-size: 1.1666666667rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+}
+.restaurant .menu__plat-1 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid green;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant .menu__plat-2 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid green;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant .menu__plat-3 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid green;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant .menu__dessert-1 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid red;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant .menu__dessert-2 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid red;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant .menu__dessert-3 {
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 0.8333333333rem;
+  border: 1px solid red;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -94,3 +94,66 @@
 }
 
 
+
+
+/// arrondis pour les cercles
+@mixin radius-50 {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+/// personnalisation haut  du load spinner :   $primaire;
+// personnalisation bas du load spinner:  $secondaire;
+@mixin spinner-haut-et-bas ($color: $primaire) {
+    border: 0.05vw solid;
+    padding: 0.8vw;
+    background: transparent;
+    background-clip: content-box;
+    width: 2vw;
+    height: 2vw;
+    @include  radius-50();
+    margin: 0;
+    opacity: 1;
+    border-color: $color $color $color $color ;
+    @content;
+
+}
+
+/// personnalisation droite du load spinner :  border : $primaire;
+// personnalisation gauche du load spinner:  border: $secondaire;
+
+@mixin spinner-droite-et-gauche ($couleur: $primaire ) {
+    border: 0.45vw double $couleur;
+    padding: 0.2vw;
+    background-clip: content-box;
+    width: 2vw;
+    height: 2vw;
+     @include  radius-50();
+    margin: 0;
+    opacity: 1;
+
+    @if ($couleur ==$primaire) {
+        box-shadow:
+            inset 0.15vw 0vw 0.15vw 0.15vw $secondaire,
+            inset 0vw 0.15vw 0.15vw 0.15vw $secondaire,
+            inset -0.15vw 0vw 0.15vw 0.15vw $secondaire,
+            inset 0vw -0.15vw 0.15vw 0.15vw $secondaire;
+    }
+
+    @else {
+        box-shadow:
+            inset 0.15vw 0vw 0.15vw 0.15vw $primaire,
+            inset 0vw 0.15vw 0.15vw 0.15vw $primaire,
+            inset -0.15vw 0vw 0.15vw 0.15vw $primaire,
+            inset 0vw -0.15vw 0.15vw 0.15vw $primaire;
+    }
+
+    ;
+    border-color: $couleur  ;
+}
+
+
+
+
