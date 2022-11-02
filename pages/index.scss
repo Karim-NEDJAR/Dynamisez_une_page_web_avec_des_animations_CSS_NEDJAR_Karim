@@ -402,7 +402,6 @@
         &__resto {
             height: calc(58/12)*1rem;
             background-color: white;
-            padding-left: calc(10/12)*1rem;
             padding-right: calc(24/12)*1rem;
             margin-top: calc(18/12)*1rem;
             margin-bottom: calc(16/12)*1rem;
@@ -411,7 +410,7 @@
             justify-content: space-between;
             align-items: center;
             background: $bg-rest; // #f6f6f6; 
-            border: 1px solid red; //provisoire
+            @include makeradius ("top", 29);
             padding-bottom: calc(16/12)*1rem; ///
 
             &--nom {
@@ -421,6 +420,9 @@
                 padding-left: calc(5/12)*1rem;
                 //  padding-bottom: calc(12/12)*1rem;
                 margin-top: calc(18/12)*1rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
 
             &--jaime {
@@ -451,26 +453,7 @@
 
                 }
 
-                /*  &>i {
-                    color: $bg-rest; //la même couleur que le bg 
-                    -webkit-text-stroke: 1px black;
-                    font-size: calc(22/12)*1rem;
-                    display: inline-block;
-                    width: calc(22/12)*1rem;
-                    height: calc(22/12)*1rem;
-                    transition: color 500ms ease-in-out;
-                   
 
-                    &:hover {
-                        -webkit-text-stroke: 0px;
-                        background: linear-gradient(200deg, $primaire 0%, $secondaire 100%);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        color: transparent;
-
-                    }
-
-            }*/
 
             }
         }
@@ -478,6 +461,7 @@
         &__entree {
 
             &__titre {
+                padding-left: calc(7/12)*1rem;
                 height: calc(40/12)*1rem;
                 color: #1f1f1f; // couleur à vérifier
                 font-size: calc(16/12)*1rem;
@@ -499,13 +483,13 @@
                     height: calc(68/12)*1rem;
                     margin-bottom: calc(14/12)*1rem;
                     padding-left: calc(10/12)*1rem;
-                    border: 1px solid red; //provisoire
                     background-color: white;
                     @include makeradius ("all", 12);
                     display: flex;
                     flex-flow: row nowrap;
                     justify-content: space-between;
                     align-items: center;
+                    box-shadow: calc(7/12)*1rem calc(7/12)*1rem calc(12/12)*1rem #e8e8e8;
 
                     &__recette {
                         height: 100%;
@@ -516,37 +500,53 @@
 
 
 
+
+
                         &--nom {
                             height: 50%;
                             font-size: calc(18/12)*1rem;
                             font-weight: bold;
-                            text-overflow: ellipsis;
                             margin: 0;
+                            overflow: hidden;
                             text-overflow: ellipsis;
-                             overflow: hidden;
-                            //white-space: nowrap ;
+                            white-space: nowrap;
                             display: flex;
                             flex-flow: row nowrap;
                             justify-content: flex-start;
                             align-items: center;
-
+                            padding-top: calc(7/12)*1rem;
                         }
 
                         &--detail {
                             height: 50%;
                             font-size: calc(14/12)*1rem;
-                            text-overflow: ellipsis;
                             overflow: hidden;
-                            //white-space: nowrap ;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
                             margin: 0;
-
+                            padding-top: calc(7/12)*1rem;
                         }
                     }
 
-                    &__prix {
-                        &>span {}
+                    &--prix {
+                        width: calc(68/12)*1rem;
+                        height: calc(68/12)*1rem;
+                        padding-top: calc(14/12)*1rem;
+                        
 
-                        & i {}
+
+                        & span {
+                            display: block;
+                            font-size: 20px; //  calc(26/12)*1rem;
+                        }
+
+                        & i {
+                            display: block;
+                            font-size:20px; // calc(26/12)*1rem;
+                            @include makeradius ("right", 34);
+                            background: $tertiaire;
+
+                        }
 
                     }
 
@@ -563,7 +563,6 @@
                     height: calc(68/12)*1rem;
                     margin-bottom: calc(14/12)*1rem;
                     padding-left: calc(10/12)*1rem;
-                    border: 1px solid green; //provisoire
                     background-color: white;
                     @include makeradius ("all", 12);
                     display: flex;
@@ -581,7 +580,6 @@
                     height: calc(68/12)*1rem;
                     margin-bottom: calc(14/12)*1rem;
                     padding-left: calc(10/12)*1rem;
-                    border: 1px solid red; //provisoire
                     background-color: white;
                     @include makeradius ("all", 12);
                     display: flex;

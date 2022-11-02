@@ -154,6 +154,11 @@
     border-color: $couleur  ;
 }
 
+/// création d'ombres, un côté à la fois
+@mixin makeshadow($direction: "bottom", $etendue: 12, $flou: $etendue, $couleur: gray) {
+// bientôt code ici
+}
+
 
 
 
