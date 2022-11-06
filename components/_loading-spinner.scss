@@ -1,7 +1,6 @@
 
 
 
-
 /// keyframe faisant disparaitre le loading spinner
 @keyframes volatilisation {
 
@@ -85,12 +84,12 @@
 
 /// loading spinner : 4 cercles en rotation autour d'un rond central 
 /// avec effets de bordures, d'ombres etc. avec les couleurs  du site
- .loading-land {
+.loading-land {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
-    top: 0;
+    right: 0;
     bottom: 0;
     background-image: radial-gradient(circle,
             rgb(234, 234, 234, 1) 33%,
@@ -119,7 +118,6 @@
         justify-content: center;
         align-items: center;
         animation: sens-horaire 1777ms linear infinite forwards;
-        overflow: hidden;
 
 
         &__haut {
@@ -127,7 +125,7 @@
                 border-width: 0.05vw 0.1vw 0.7vw 0.1vw;
             }
 
-           
+
         }
 
         &__bas {
@@ -136,7 +134,7 @@
                 border-width: 0.7vw 0.1vw 0.05vw 0.1vw;
             }
 
-         
+
         }
 
         &__milieu {
@@ -161,7 +159,7 @@
                 width: 2vw;
                 height: 2vw;
                 @include radius-50;
-                animation: invisibilisation 300ms linear infinite alternate ;
+                animation: invisibilisation 250ms linear infinite alternate;
 
             }
 
@@ -177,4 +175,3 @@
     }
 
 }
-

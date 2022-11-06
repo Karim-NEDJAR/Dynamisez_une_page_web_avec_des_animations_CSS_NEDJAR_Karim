@@ -388,18 +388,18 @@
 
 
     & .menu {
+        width: 100%; ////
         position: relative;
         top: calc(-38/12)*1rem;
         background: $bg-rest; // #f6f6f6; 
         margin: 0;
-        padding: calc(12/12)*1rem; // 0 12px;
+        padding: calc(12/12)*1rem; //  12px;
         @include makeradius ("top", 38);
 
-        /* & h1 {
-    margin:0;
-}*/
+        /* & h1 {  margin:0; }*/
 
         &__resto {
+            width: 100%; ////
             height: calc(58/12)*1rem;
             background-color: white;
             padding-right: calc(24/12)*1rem;
@@ -417,7 +417,7 @@
                 color: #101010;
                 font-size: calc(28/12)*1rem;
                 font-weight: normal;
-                padding-left: calc(5/12)*1rem;
+                padding-left: calc(7/12)*1rem;
                 //  padding-bottom: calc(12/12)*1rem;
                 margin-top: calc(18/12)*1rem;
                 overflow: hidden;
@@ -427,6 +427,9 @@
 
             &--jaime {
                 position: relative;
+                padding-bottom: calc(4/12)*1rem;
+                padding-right: calc(3/12)*1rem;
+
 
                 & .fa-heart {
                     font-size: calc(22/12)*1rem;
@@ -459,9 +462,12 @@
         }
 
         &__entree {
+            width: 100%; ////
+
 
             &__titre {
                 padding-left: calc(7/12)*1rem;
+                padding-bottom: calc(6/12)*1rem;
                 height: calc(40/12)*1rem;
                 color: #1f1f1f; // couleur à vérifier
                 font-size: calc(16/12)*1rem;
@@ -480,30 +486,42 @@
 
             @for $i from 1 through 3 {
                 &-#{$i} {
+                    // position: relative;
+                    width: 100%; ////
                     height: calc(68/12)*1rem;
                     margin-bottom: calc(14/12)*1rem;
-                    padding-left: calc(10/12)*1rem;
+                    padding-left: calc(12/12)*1rem;
                     background-color: white;
                     @include makeradius ("all", 12);
                     display: flex;
                     flex-flow: row nowrap;
                     justify-content: space-between;
                     align-items: center;
+                    overflow: hidden;
                     box-shadow: calc(7/12)*1rem calc(7/12)*1rem calc(12/12)*1rem #e8e8e8;
+
+
+
 
                     &__recette {
                         height: 100%;
+                        width: 100%;
                         display: flex;
                         flex-flow: column nowrap;
                         justify-content: center;
                         align-items: flex-start;
+                        overflow: hidden;
+                        // width: calc(100% - 60px);
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        //  margin-right: calc(60/12)*1rem;
 
 
 
 
-
-                        &--nom {
+                        &__nom {
                             height: 50%;
+                            width: 100%;
                             font-size: calc(18/12)*1rem;
                             font-weight: bold;
                             margin: 0;
@@ -514,92 +532,168 @@
                             flex-flow: row nowrap;
                             justify-content: flex-start;
                             align-items: center;
-                            padding-top: calc(7/12)*1rem;
+                            padding-top: calc(8/12)*1rem;
+                            // letter-spacing: 1px;
                         }
 
-                        &--detail {
+                        &__detail {
                             height: 50%;
-                            font-size: calc(14/12)*1rem;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
                             margin: 0;
-                            padding-top: calc(7/12)*1rem;
+                            width: 100%;
+                            //  width:  calc(100% - 136px);
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: space-between;
+                            align-items: center;
+                            overflow: hidden;
+                            ///  text-overflow: ellipsis;
+                            white-space: nowrap;
+                            //padding-top: calc(7/12)*1rem;
+                            padding-bottom: calc(6/12)*1rem;
+
+                            &--variante {
+                                //width: calc(100% - calc(68/12)*1rem);
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                display: inline-block;
+                                font-size: calc(15/12)*1rem;
+
+
+                            }
+
+                            &--prix {
+                                width: calc(60/12)*1rem;
+                                height: 100%;
+                                display: inline-block;
+                                font-size: calc(16/12)*1rem;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                padding-bottom: calc(12/12)*1rem;
+                                padding-left: calc(12/12)*1rem;
+                            }
+
                         }
+
+
+
                     }
 
-                    &--prix {
-                        width: calc(68/12)*1rem;
-                        height: calc(68/12)*1rem;
-                        padding-top: calc(14/12)*1rem;
-                        
+                    &__selectionner {
+
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: calc(20/12)*1rem;
+                        color: white;
+                        @include makeradius ("right", 12);
+                        background: $tertiaire;
+                        width: calc(60/12)*1rem;
+                        height: 100%; // calc(68/12)*1rem;
+                        margin: 0;
+                        overflow: hidden;
+                        transform: translateX (50%);
 
 
-                        & span {
-                            display: block;
-                            font-size: 20px; //  calc(26/12)*1rem;
+
+
+
+
+                    }
+
+
+
+                    &:hover {
+
+
+
+                        & > div + div {
+                            border: 1px solid red;
+
+
+                            &>i {
+                                color: red;
+                                // animation: rotation-coche 999ms;
+                            }
                         }
 
-                        & i {
-                            display: block;
-                            font-size:20px; // calc(26/12)*1rem;
-                            @include makeradius ("right", 34);
-                            background: $tertiaire;
-
-                        }
 
                     }
 
                 }
 
+                //fin for
+
+
             }
 
+            // fin entrees-{i}
+
         }
-
-        &__plat {
-
-            @for $i from 1 through 3 {
-                &-#{$i} {
-                    height: calc(68/12)*1rem;
-                    margin-bottom: calc(14/12)*1rem;
-                    padding-left: calc(10/12)*1rem;
-                    background-color: white;
-                    @include makeradius ("all", 12);
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-            }
-        }
-
-        &__dessert {
-
-            @for $i from 1 through 3 {
-                &-#{$i} {
-                    height: calc(68/12)*1rem;
-                    margin-bottom: calc(14/12)*1rem;
-                    padding-left: calc(10/12)*1rem;
-                    background-color: white;
-                    @include makeradius ("all", 12);
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-            }
-        }
-
-
-
-
-
-
-
-
-
-
 
     }
+
+    &__plat {
+
+        @for $i from 1 through 3 {
+            &-#{$i} {
+                height: calc(68/12)*1rem;
+                margin-bottom: calc(14/12)*1rem;
+                padding-left: calc(10/12)*1rem;
+                background-color: white;
+                @include makeradius ("all", 12);
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+
+    &__dessert {
+
+        @for $i from 1 through 3 {
+            &-#{$i} {
+                height: calc(68/12)*1rem;
+                margin-bottom: calc(14/12)*1rem;
+                padding-left: calc(10/12)*1rem;
+                background-color: white;
+                @include makeradius ("all", 12);
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+        }
+    }
+
+}
+
+
+/// fin pages menu
+/// 
+@keyframes rotation-coche {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+
+}
+
+/// 
+@keyframes translation-coche {
+    from {
+        transform: translateX (100%);
+    }
+
+    to {
+        transform: translateX (-100%);
+    }
+
 }

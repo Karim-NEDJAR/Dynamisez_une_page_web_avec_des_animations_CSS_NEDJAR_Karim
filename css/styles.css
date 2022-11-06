@@ -12,10 +12,24 @@ html {
   box-sizing: inherit;
 }
 
-body {
+@keyframes body-apparition {
+  0%, 70% {
+    opacity: 0;
+    display: none;
+  }
+  70%, 95% {
+    opacity: 0.5;
+  }
+  95%, 100% {
+    opacity: 1;
+    display: block;
+  }
+}
+.body {
   width: 100%;
   max-width: 1920px;
   min-width: 300px;
+  animation: body-apparition 3000ms linear forwards;
 }
 
 .main {
@@ -126,10 +140,10 @@ html {
 }
 .loading-land {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
-  top: 0;
+  right: 0;
   bottom: 0;
   background-image: radial-gradient(circle, rgb(234, 234, 234) 33%, rgba(234, 234, 234, 0.8) 66%, rgba(234, 234, 234, 0.6) 100%);
   width: 100vw;
@@ -153,7 +167,6 @@ html {
   justify-content: center;
   align-items: center;
   animation: sens-horaire 1777ms linear infinite forwards;
-  overflow: hidden;
 }
 .loading-land .manege__haut {
   border: 0.05vw solid;
@@ -222,7 +235,7 @@ html {
   border-bottom-left-radius: 50%;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-  animation: invisibilisation 300ms linear infinite alternate;
+  animation: invisibilisation 250ms linear infinite alternate;
 }
 .loading-land .manege__milieu--gauche {
   border: 0.45vw double #FF79DA;
@@ -240,132 +253,6 @@ html {
   border-color: #FF79DA;
 }
 
-/*
-
-.loading-land {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    top:0;
-    bottom:0;
-    background-image: radial-gradient(rgba(153, 226, 208, 1) 50%, rgba(153, 226, 208, 0.7) 80%, rgba(153, 226, 208, 0.5) 100%);
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    opacity: 0.95;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    transform-origin: left top;
-    animation: volatilisation 2500ms ease-in-out forwards;
-    overflow: hidden;
-
-
-
-    & .manege {
-        z-index: 2;
-        background: transparent;
-        width: 10vw;
-        height: 10vw;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-       // animation-iteration-count: 5;
-        animation: sens-horaire 500ms linear infinite;
-        overflow: hidden;
-
-        &__haut {
-            background: linear-gradient(0deg, rgba(147, 86, 219, 1) 33%, rgba(255, 120, 217, 1) 66%,
-                    rgba(255, 120, 217, 1) 100%);
-            width: 2vw;
-            height: 4vw;
-            border: 3px solid $primaire-sombre;
-            border-top-left-radius: 200%;
-            border-top-right-radius: 200%;
-            border-bottom-left-radius: 50%;
-            border-bottom-right-radius:50%;
-            margin: 0;
-
-        }
-
-        &__milieu {
-            width: 100%;
-            height: 2vw;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: center;
-            background: transparent;
-            margin: 0;
-
-
-
-            &--gauche {
-                border: 3px solid $primaire-sombre;
-                background: linear-gradient(-90deg, rgba(147, 86, 219, 1) 33%, rgba(255, 120, 217, 1) 66%,
-                        rgba(255, 120, 217, 1) 100%);
-                width: 4vw;
-                height: 2vw;
-                border-top-left-radius: 200%;
-                border-bottom-left-radius: 200%;
-                border-top-right-radius: 50%;
-                border-bottom-right-radius: 50%;
-                margin: 0;
-
-            }
-
-            &--centre {
-                border: 5px dashed black;
-                background-image: radial-gradient(circle,
-                        rgba(147, 86, 219, 1) 33%,
-                        rgba(255, 120, 217, 1) 66%,
-                        rgba(255, 120, 217, 1) 100%);
-                width: 2vw;
-                height: 2vw;
-                border-top-left-radius: 50%;
-                border-bottom-left-radius: 50%;
-                border-top-right-radius: 50%;
-                border-bottom-right-radius: 50%;
-                margin: 0;
-
-            }
-            &--droite {
-                background: linear-gradient(90deg, rgba(147, 86, 219, 1) 33%, rgba(255, 120, 217, 1) 66%,
-                        rgba(255, 120, 217, 1) 100%);
-                width: 4vw;
-                height: 2vw;
-                border: 3px solid $primaire-sombre;
-                border-top-left-radius: 50%;
-                border-bottom-left-radius: 50%;
-                border-top-right-radius: 200%;
-                border-bottom-right-radius: 200%;
-                margin: 0;
-
-            }
-
-        }
-
-        //fin milieu 
-        &__bas {
-            background: linear-gradient(180deg, rgba(147, 86, 219, 1) 33%, rgba(255, 120, 217, 1) 66%,
-                    rgba(255, 120, 217, 1) 100%);
-            width: 2vw;
-            height: 4vw;
-            border: 3px solid $primaire-sombre;
-            border-top-left-radius: 50%; 
-            border-top-right-radius: 50%;
-            border-bottom-left-radius: 200%;
-            border-bottom-right-radius: 200%;
-            margin: 0;
-
-        }
-
-    }
-
-}
-*/
 .header {
   width: 100%;
   height: 64px;
@@ -1131,6 +1018,7 @@ html {
   object-fit: cover;
 }
 .restaurant .menu {
+  width: 100%;
   position: relative;
   top: -3.1666666667rem;
   background: #f6f6f6;
@@ -1138,11 +1026,10 @@ html {
   padding: 1rem;
   border-top-left-radius: 3.1666666667rem;
   border-top-right-radius: 3.1666666667rem;
-  /* & h1 {
-      margin:0;
-  }*/
+  /* & h1 {  margin:0; }*/
 }
 .restaurant .menu__resto {
+  width: 100%;
   height: 4.8333333333rem;
   background-color: white;
   padding-right: 2rem;
@@ -1161,7 +1048,7 @@ html {
   color: #101010;
   font-size: 2.3333333333rem;
   font-weight: normal;
-  padding-left: 0.4166666667rem;
+  padding-left: 0.5833333333rem;
   margin-top: 1.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1169,6 +1056,8 @@ html {
 }
 .restaurant .menu__resto--jaime {
   position: relative;
+  padding-bottom: 0.3333333333rem;
+  padding-right: 0.25rem;
 }
 .restaurant .menu__resto--jaime .fa-heart {
   font-size: 1.8333333333rem;
@@ -1191,8 +1080,12 @@ html {
   opacity: 1;
   filter: contrast(1.3);
 }
+.restaurant .menu__entree {
+  width: 100%;
+}
 .restaurant .menu__entree__titre {
   padding-left: 0.5833333333rem;
+  padding-bottom: 0.5rem;
   height: 3.3333333333rem;
   color: #1f1f1f;
   font-size: 1.3333333333rem;
@@ -1208,9 +1101,10 @@ html {
   border-bottom: 0.25rem solid #99E2D0;
 }
 .restaurant .menu__entree-1 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1220,17 +1114,23 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
 }
 .restaurant .menu__entree-1__recette {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.restaurant .menu__entree-1__recette--nom {
+.restaurant .menu__entree-1__recette__nom {
   height: 50%;
+  width: 100%;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
@@ -1241,37 +1141,65 @@ html {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 0.5833333333rem;
+  padding-top: 0.6666666667rem;
 }
-.restaurant .menu__entree-1__recette--detail {
+.restaurant .menu__entree-1__recette__detail {
   height: 50%;
-  font-size: 1.1666666667rem;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__entree-1__recette__detail--variante {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0;
-  padding-top: 0.5833333333rem;
+  display: inline-block;
+  font-size: 1.25rem;
 }
-.restaurant .menu__entree-1--prix {
-  width: 5.6666666667rem;
-  height: 5.6666666667rem;
-  padding-top: 1.1666666667rem;
+.restaurant .menu__entree-1__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.3333333333rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
-.restaurant .menu__entree-1--prix span {
-  display: block;
-  font-size: 20px;
-}
-.restaurant .menu__entree-1--prix i {
-  display: block;
-  font-size: 20px;
-  border-top-right-radius: 2.8333333333rem;
-  border-bottom-right-radius: 2.8333333333rem;
+.restaurant .menu__entree-1__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6666666667rem;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  transform: translateX 50%;
+}
+.restaurant .menu__entree-1:hover > div + div {
+  border: 1px solid red;
+}
+.restaurant .menu__entree-1:hover > div + div > i {
+  color: red;
 }
 .restaurant .menu__entree-2 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1281,17 +1209,23 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
 }
 .restaurant .menu__entree-2__recette {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.restaurant .menu__entree-2__recette--nom {
+.restaurant .menu__entree-2__recette__nom {
   height: 50%;
+  width: 100%;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
@@ -1302,37 +1236,65 @@ html {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 0.5833333333rem;
+  padding-top: 0.6666666667rem;
 }
-.restaurant .menu__entree-2__recette--detail {
+.restaurant .menu__entree-2__recette__detail {
   height: 50%;
-  font-size: 1.1666666667rem;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__entree-2__recette__detail--variante {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0;
-  padding-top: 0.5833333333rem;
+  display: inline-block;
+  font-size: 1.25rem;
 }
-.restaurant .menu__entree-2--prix {
-  width: 5.6666666667rem;
-  height: 5.6666666667rem;
-  padding-top: 1.1666666667rem;
+.restaurant .menu__entree-2__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.3333333333rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
-.restaurant .menu__entree-2--prix span {
-  display: block;
-  font-size: 20px;
-}
-.restaurant .menu__entree-2--prix i {
-  display: block;
-  font-size: 20px;
-  border-top-right-radius: 2.8333333333rem;
-  border-bottom-right-radius: 2.8333333333rem;
+.restaurant .menu__entree-2__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6666666667rem;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  transform: translateX 50%;
+}
+.restaurant .menu__entree-2:hover > div + div {
+  border: 1px solid red;
+}
+.restaurant .menu__entree-2:hover > div + div > i {
+  color: red;
 }
 .restaurant .menu__entree-3 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1342,17 +1304,23 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
 }
 .restaurant .menu__entree-3__recette {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.restaurant .menu__entree-3__recette--nom {
+.restaurant .menu__entree-3__recette__nom {
   height: 50%;
+  width: 100%;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
@@ -1363,34 +1331,61 @@ html {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 0.5833333333rem;
+  padding-top: 0.6666666667rem;
 }
-.restaurant .menu__entree-3__recette--detail {
+.restaurant .menu__entree-3__recette__detail {
   height: 50%;
-  font-size: 1.1666666667rem;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__entree-3__recette__detail--variante {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0;
-  padding-top: 0.5833333333rem;
+  display: inline-block;
+  font-size: 1.25rem;
 }
-.restaurant .menu__entree-3--prix {
-  width: 5.6666666667rem;
-  height: 5.6666666667rem;
-  padding-top: 1.1666666667rem;
+.restaurant .menu__entree-3__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.3333333333rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
-.restaurant .menu__entree-3--prix span {
-  display: block;
-  font-size: 20px;
-}
-.restaurant .menu__entree-3--prix i {
-  display: block;
-  font-size: 20px;
-  border-top-right-radius: 2.8333333333rem;
-  border-bottom-right-radius: 2.8333333333rem;
+.restaurant .menu__entree-3__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6666666667rem;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  transform: translateX 50%;
 }
-.restaurant .menu__plat-1 {
+.restaurant .menu__entree-3:hover > div + div {
+  border: 1px solid red;
+}
+.restaurant .menu__entree-3:hover > div + div > i {
+  color: red;
+}
+.restaurant__plat-1 {
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
   padding-left: 0.8333333333rem;
@@ -1404,7 +1399,7 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.restaurant .menu__plat-2 {
+.restaurant__plat-2 {
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
   padding-left: 0.8333333333rem;
@@ -1418,7 +1413,7 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.restaurant .menu__plat-3 {
+.restaurant__plat-3 {
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
   padding-left: 0.8333333333rem;
@@ -1432,7 +1427,7 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.restaurant .menu__dessert-1 {
+.restaurant__dessert-1 {
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
   padding-left: 0.8333333333rem;
@@ -1446,7 +1441,7 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.restaurant .menu__dessert-2 {
+.restaurant__dessert-2 {
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
   padding-left: 0.8333333333rem;
@@ -1460,7 +1455,7 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.restaurant .menu__dessert-3 {
+.restaurant__dessert-3 {
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
   padding-left: 0.8333333333rem;
@@ -1473,6 +1468,23 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+}
+
+@keyframes rotation-coche {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes translation-coche {
+  from {
+    transform: translateX 100%;
+  }
+  to {
+    transform: translateX -100%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

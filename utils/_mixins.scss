@@ -62,6 +62,27 @@
         border-bottom-right-radius: calc($arrondi/12)*1rem;
     }
 }
+/// création d'arrondis tous identiques en pourcentages (%), en paramètre le côté 
+/// termes acceptés: "right", "left", "top", "bottom" et  "all"
+/// la valeur de l'arrondi en pourcentages (%) sans l'unité % (donc un nombre pur). 
+
+@mixin makeradius-pourcent ($side: "all", $arrondi: 25) {
+    @if (($side =="all") or ($side =="top") or ($side =="left")) {
+        border-top-left-radius: calc($arrondi)*1%;
+    }
+
+    @if (($side =="all") or ($side =="top") or ($side =="right")) {
+        border-top-right-radius: calc($arrondi)*1%;
+    }
+
+    @if (($side =="all") or ($side =="bottom") or ($side =="left")) {
+        border-bottom-left-radius: calc($arrondi)*1%;
+    }
+
+    @if (($side =="all") or ($side =="bottom") or ($side =="right")) {
+        border-bottom-right-radius: calc($arrondi)*1%;
+    }
+}
 
 
 
