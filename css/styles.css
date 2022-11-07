@@ -1023,10 +1023,15 @@ html {
   top: -3.1666666667rem;
   background: #f6f6f6;
   margin: 0;
-  padding: 1rem;
+  padding-top: 1.1666666667rem;
+  padding-bottom: 1.1666666667rem;
+  padding-left: 1.1666666667rem;
+  padding-right: 1rem;
   border-top-left-radius: 3.1666666667rem;
   border-top-right-radius: 3.1666666667rem;
-  /* & h1 {  margin:0; }*/
+  /* fin $SERVICE */
+  /* fin $SERVICE */
+  /* fin $SERVICE */
 }
 .restaurant .menu__resto {
   width: 100%;
@@ -1034,7 +1039,7 @@ html {
   background-color: white;
   padding-right: 2rem;
   margin-top: 1.5rem;
-  margin-bottom: 1.3333333333rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -1042,7 +1047,7 @@ html {
   background: #f6f6f6;
   border-top-left-radius: 2.4166666667rem;
   border-top-right-radius: 2.4166666667rem;
-  padding-bottom: 1.3333333333rem;
+  padding-bottom: 1.5rem;
 }
 .restaurant .menu__resto--nom {
   color: #101010;
@@ -1082,10 +1087,11 @@ html {
 }
 .restaurant .menu__entree {
   width: 100%;
+  margin-bottom: 3rem;
 }
 .restaurant .menu__entree__titre {
   padding-left: 0.5833333333rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   height: 3.3333333333rem;
   color: #1f1f1f;
   font-size: 1.3333333333rem;
@@ -1097,7 +1103,7 @@ html {
   content: "";
   display: block;
   width: 3.3333333333rem;
-  padding-top: 0.4166666667rem;
+  padding-top: 0.5rem;
   border-bottom: 0.25rem solid #99E2D0;
 }
 .restaurant .menu__entree-1 {
@@ -1116,6 +1122,7 @@ html {
   align-items: center;
   overflow: hidden;
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
 }
 .restaurant .menu__entree-1__recette {
   height: 100%;
@@ -1131,17 +1138,13 @@ html {
 .restaurant .menu__entree-1__recette__nom {
   height: 50%;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.4166666667rem;
   font-weight: bold;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 0.6666666667rem;
+  padding-top: 1.1666666667rem;
 }
 .restaurant .menu__entree-1__recette__detail {
   height: 50%;
@@ -1156,6 +1159,7 @@ html {
   padding-bottom: 0.5rem;
 }
 .restaurant .menu__entree-1__recette__detail--variante {
+  display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1166,34 +1170,44 @@ html {
   width: 5rem;
   height: 100%;
   display: inline-block;
-  font-size: 1.3333333333rem;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding-bottom: 1rem;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
   padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 .restaurant .menu__entree-1__selectionner {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  font-size: 1.6666666667rem;
   color: white;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background: #99E2D0;
   width: 5rem;
   height: 100%;
-  margin: 0;
   overflow: hidden;
-  transform: translateX 50%;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__entree-1__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
 }
 .restaurant .menu__entree-1:hover > div + div {
-  border: 1px solid red;
+  margin-right: 0;
+  transition: margin-right 600ms linear;
 }
 .restaurant .menu__entree-1:hover > div + div > i {
-  color: red;
+  animation: rotation-coche 600ms linear;
 }
 .restaurant .menu__entree-2 {
   width: 100%;
@@ -1211,6 +1225,7 @@ html {
   align-items: center;
   overflow: hidden;
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
 }
 .restaurant .menu__entree-2__recette {
   height: 100%;
@@ -1226,17 +1241,13 @@ html {
 .restaurant .menu__entree-2__recette__nom {
   height: 50%;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.4166666667rem;
   font-weight: bold;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 0.6666666667rem;
+  padding-top: 1.1666666667rem;
 }
 .restaurant .menu__entree-2__recette__detail {
   height: 50%;
@@ -1251,6 +1262,7 @@ html {
   padding-bottom: 0.5rem;
 }
 .restaurant .menu__entree-2__recette__detail--variante {
+  display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1261,34 +1273,44 @@ html {
   width: 5rem;
   height: 100%;
   display: inline-block;
-  font-size: 1.3333333333rem;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding-bottom: 1rem;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
   padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 .restaurant .menu__entree-2__selectionner {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  font-size: 1.6666666667rem;
   color: white;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background: #99E2D0;
   width: 5rem;
   height: 100%;
-  margin: 0;
   overflow: hidden;
-  transform: translateX 50%;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__entree-2__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
 }
 .restaurant .menu__entree-2:hover > div + div {
-  border: 1px solid red;
+  margin-right: 0;
+  transition: margin-right 600ms linear;
 }
 .restaurant .menu__entree-2:hover > div + div > i {
-  color: red;
+  animation: rotation-coche 600ms linear;
 }
 .restaurant .menu__entree-3 {
   width: 100%;
@@ -1306,6 +1328,7 @@ html {
   align-items: center;
   overflow: hidden;
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
 }
 .restaurant .menu__entree-3__recette {
   height: 100%;
@@ -1321,17 +1344,13 @@ html {
 .restaurant .menu__entree-3__recette__nom {
   height: 50%;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.4166666667rem;
   font-weight: bold;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 0.6666666667rem;
+  padding-top: 1.1666666667rem;
 }
 .restaurant .menu__entree-3__recette__detail {
   height: 50%;
@@ -1346,6 +1365,7 @@ html {
   padding-bottom: 0.5rem;
 }
 .restaurant .menu__entree-3__recette__detail--variante {
+  display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1356,39 +1376,71 @@ html {
   width: 5rem;
   height: 100%;
   display: inline-block;
-  font-size: 1.3333333333rem;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding-bottom: 1rem;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
   padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 .restaurant .menu__entree-3__selectionner {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  font-size: 1.6666666667rem;
   color: white;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background: #99E2D0;
   width: 5rem;
   height: 100%;
-  margin: 0;
   overflow: hidden;
-  transform: translateX 50%;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__entree-3__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
 }
 .restaurant .menu__entree-3:hover > div + div {
-  border: 1px solid red;
+  margin-right: 0;
+  transition: margin-right 600ms linear;
 }
 .restaurant .menu__entree-3:hover > div + div > i {
-  color: red;
+  animation: rotation-coche 600ms linear;
 }
-.restaurant__plat-1 {
+.restaurant .menu__plat {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.restaurant .menu__plat__titre {
+  padding-left: 0.5833333333rem;
+  padding-bottom: 1rem;
+  height: 3.3333333333rem;
+  color: #1f1f1f;
+  font-size: 1.3333333333rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  /*soulignement du titre  sur 40px */
+}
+.restaurant .menu__plat__titre::after {
+  content: "";
+  display: block;
+  width: 3.3333333333rem;
+  padding-top: 0.5rem;
+  border-bottom: 0.25rem solid #99E2D0;
+}
+.restaurant .menu__plat-1 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1398,11 +1450,100 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
 }
-.restaurant__plat-2 {
+.restaurant .menu__plat-1__recette {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurant .menu__plat-1__recette__nom {
+  height: 50%;
+  width: 100%;
+  font-size: 1.4166666667rem;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 1.1666666667rem;
+}
+.restaurant .menu__plat-1__recette__detail {
+  height: 50%;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__plat-1__recette__detail--variante {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+.restaurant .menu__plat-1__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
+  padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.restaurant .menu__plat-1__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  overflow: hidden;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__plat-1__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
+}
+.restaurant .menu__plat-1:hover > div + div {
+  margin-right: 0;
+  transition: margin-right 600ms linear;
+}
+.restaurant .menu__plat-1:hover > div + div > i {
+  animation: rotation-coche 600ms linear;
+}
+.restaurant .menu__plat-2 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1412,11 +1553,100 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
 }
-.restaurant__plat-3 {
+.restaurant .menu__plat-2__recette {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurant .menu__plat-2__recette__nom {
+  height: 50%;
+  width: 100%;
+  font-size: 1.4166666667rem;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 1.1666666667rem;
+}
+.restaurant .menu__plat-2__recette__detail {
+  height: 50%;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__plat-2__recette__detail--variante {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+.restaurant .menu__plat-2__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
+  padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.restaurant .menu__plat-2__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  overflow: hidden;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__plat-2__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
+}
+.restaurant .menu__plat-2:hover > div + div {
+  margin-right: 0;
+  transition: margin-right 600ms linear;
+}
+.restaurant .menu__plat-2:hover > div + div > i {
+  animation: rotation-coche 600ms linear;
+}
+.restaurant .menu__plat-3 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1426,11 +1656,121 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
 }
-.restaurant__dessert-1 {
+.restaurant .menu__plat-3__recette {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurant .menu__plat-3__recette__nom {
+  height: 50%;
+  width: 100%;
+  font-size: 1.4166666667rem;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 1.1666666667rem;
+}
+.restaurant .menu__plat-3__recette__detail {
+  height: 50%;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__plat-3__recette__detail--variante {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+.restaurant .menu__plat-3__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
+  padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.restaurant .menu__plat-3__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  overflow: hidden;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__plat-3__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
+}
+.restaurant .menu__plat-3:hover > div + div {
+  margin-right: 0;
+  transition: margin-right 600ms linear;
+}
+.restaurant .menu__plat-3:hover > div + div > i {
+  animation: rotation-coche 600ms linear;
+}
+.restaurant .menu__dessert {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.restaurant .menu__dessert__titre {
+  padding-left: 0.5833333333rem;
+  padding-bottom: 1rem;
+  height: 3.3333333333rem;
+  color: #1f1f1f;
+  font-size: 1.3333333333rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  /*soulignement du titre  sur 40px */
+}
+.restaurant .menu__dessert__titre::after {
+  content: "";
+  display: block;
+  width: 3.3333333333rem;
+  padding-top: 0.5rem;
+  border-bottom: 0.25rem solid #99E2D0;
+}
+.restaurant .menu__dessert-1 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1440,11 +1780,100 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
 }
-.restaurant__dessert-2 {
+.restaurant .menu__dessert-1__recette {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurant .menu__dessert-1__recette__nom {
+  height: 50%;
+  width: 100%;
+  font-size: 1.4166666667rem;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 1.1666666667rem;
+}
+.restaurant .menu__dessert-1__recette__detail {
+  height: 50%;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__dessert-1__recette__detail--variante {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+.restaurant .menu__dessert-1__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
+  padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.restaurant .menu__dessert-1__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  overflow: hidden;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__dessert-1__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
+}
+.restaurant .menu__dessert-1:hover > div + div {
+  margin-right: 0;
+  transition: margin-right 600ms linear;
+}
+.restaurant .menu__dessert-1:hover > div + div > i {
+  animation: rotation-coche 600ms linear;
+}
+.restaurant .menu__dessert-2 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1454,11 +1883,100 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
 }
-.restaurant__dessert-3 {
+.restaurant .menu__dessert-2__recette {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurant .menu__dessert-2__recette__nom {
+  height: 50%;
+  width: 100%;
+  font-size: 1.4166666667rem;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 1.1666666667rem;
+}
+.restaurant .menu__dessert-2__recette__detail {
+  height: 50%;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__dessert-2__recette__detail--variante {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+.restaurant .menu__dessert-2__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
+  padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.restaurant .menu__dessert-2__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  overflow: hidden;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__dessert-2__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
+}
+.restaurant .menu__dessert-2:hover > div + div {
+  margin-right: 0;
+  transition: margin-right 600ms linear;
+}
+.restaurant .menu__dessert-2:hover > div + div > i {
+  animation: rotation-coche 600ms linear;
+}
+.restaurant .menu__dessert-3 {
+  width: 100%;
   height: 5.6666666667rem;
   margin-bottom: 1.1666666667rem;
-  padding-left: 0.8333333333rem;
+  padding-left: 1rem;
   background-color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -1468,23 +1986,118 @@ html {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
+}
+.restaurant .menu__dessert-3__recette {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurant .menu__dessert-3__recette__nom {
+  height: 50%;
+  width: 100%;
+  font-size: 1.4166666667rem;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 1.1666666667rem;
+}
+.restaurant .menu__dessert-3__recette__detail {
+  height: 50%;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__dessert-3__recette__detail--variante {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+.restaurant .menu__dessert-3__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
+  padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.restaurant .menu__dessert-3__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  overflow: hidden;
+  margin-right: -5rem;
+  transition: margin-right 400ms linear;
+  flex-shrink: 0;
+}
+.restaurant .menu__dessert-3__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
+}
+.restaurant .menu__dessert-3:hover > div + div {
+  margin-right: 0;
+  transition: margin-right 600ms linear;
+}
+.restaurant .menu__dessert-3:hover > div + div > i {
+  animation: rotation-coche 600ms linear;
 }
 
 @keyframes rotation-coche {
-  from {
-    transform: rotate(0turn);
+  0%, 30% {
+    transform: rotate(90deg);
   }
-  to {
-    transform: rotate(1turn);
+  100% {
+    transform: rotate(360deg);
   }
 }
+/*
 @keyframes translation-coche {
-  from {
-    transform: translateX 100%;
-  }
-  to {
-    transform: translateX -100%;
-  }
-}
+    from {
+        transform-origin: right;
+        transform: translateX(100%);
+    }
+
+    to {
+        transform-origin: right;
+        transform: translateX(0);
+        margin-right: 0;
+
+    }
+
+} */
 
 /*# sourceMappingURL=styles.css.map */
