@@ -158,7 +158,7 @@
                 background-clip: padding-box;
                 width: 2vw;
                 height: 2vw;
-                @include radius-50;
+                @include makeradius-pourcent("all",50) ; 
                 animation: invisibilisation 250ms linear infinite alternate;
 
             }

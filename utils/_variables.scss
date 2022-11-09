@@ -42,6 +42,34 @@ $fontsize: 12;
 $primaire-sombre: rgb(82, 31, 137);
 
 
+/*** PAGES MENUS******/
+/** liste des délais (animation-delay) pour les services*/
+$delai-s: (
+    0s,
+    1s,
+    2s
+);
+/** liste des délais du MENU (cartes)*/
+
+$delai-m: (
+    300ms,
+    600ms,
+    900ms,
+    1300ms,
+    1600ms,
+    1900ms,
+    2300ms,
+    2600ms,
+    2900ms
+);
+
+
+/**liste des services pour la 1ère boucle for*/
+$services: (
+    entree,
+    plat,
+    dessert
+);
 
 
 

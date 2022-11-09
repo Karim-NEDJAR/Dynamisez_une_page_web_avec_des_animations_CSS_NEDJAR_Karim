@@ -1,10 +1,9 @@
 .footer {
     width: 100%;
-    height: calc(200/12)*1rem;
+    height: calc(196/12)*1rem;
     background-color: $bg-footer;
-    padding: calc(30/12)*1rem  calc(25/12)*1rem ;
+    padding: calc(25/12)*1rem calc(25/12)*1rem;
     font-size: calc(16/12)*1rem;
-
 
     & a {
 
@@ -13,10 +12,7 @@
         & p {
             margin: calc(7/12)*1rem 0;
             color: white;
-
         }
-
-
     }
 
 
@@ -25,8 +21,6 @@
         height: calc(20/12)*1rem;
         overflow: hidden;
         margin-bottom: calc(22/12)*1rem;
-
-
 
         &>img {
             width: 100%;
@@ -47,15 +41,13 @@
             display: inline-block;
             margin-right: calc(8/12)*1rem;
             font-size: calc(12/12)*1rem;
-           // vertical-align: middle;
-           text-align: center;
-
+            text-align: center;
         }
 
         &>span {
             display: inline-block;
-           // vertical-align: middle; 
-            
+
+
         }
 
     }
@@ -74,12 +66,10 @@
             margin-right: calc(8/12)*1rem;
             padding-top: calc(3/12)*1rem;
             text-align: center;
-
         }
 
         &>span {
             display: inline-block;
-          //  vertical-align: middle; ///
         }
 
     }
@@ -87,15 +77,11 @@
     &__mentions {
         width: 100%;
         font-weight: normal;
-       // vertical-align: middle; ///
     }
 
     &__contact {
         width: 100%;
         font-weight: normal;
-       // vertical-align: middle; ////
 
     }
-
-
 }

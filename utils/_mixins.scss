@@ -101,10 +101,8 @@
 }
 
 /// dimentionnement et initialisation d'un pseudo-élément 
-/// (utile pour les transitions de translation / opacité  
-/// pseudo-élément  à utiliser avec la la propriété  opacity  
-/// laquelle permet de faire des transitions de couleur sans que 
-/// le navigateur ne fasse des calculs de type “paint”.  )
+/// pour les animations: éviter la propriété color et préférer la propriété  opacity  
+/// pour que  le navigateur ne fasse de calculs de type “paint”.  )
 @mixin init-pseudo-element {
     content: "";
     position: absolute;
@@ -115,16 +113,6 @@
 }
 
 
-
-
-/// arrondis pour les cercles
-@mixin radius-50 {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-}
-
 /// personnalisation haut  du load spinner :   $primaire;
 // personnalisation bas du load spinner:  $secondaire;
 @mixin spinner-haut-et-bas ($color: $primaire) {
@@ -134,7 +122,7 @@
     background-clip: content-box;
     width: 2vw;
     height: 2vw;
-    @include  radius-50();
+    @include makeradius-pourcent("all",50) ; 
     margin: 0;
     opacity: 1;
     border-color: $color $color $color $color ;
@@ -151,7 +139,7 @@
     background-clip: content-box;
     width: 2vw;
     height: 2vw;
-     @include  radius-50();
+     @include makeradius-pourcent("all",50) ; 
     margin: 0;
     opacity: 1;
 
@@ -175,9 +163,21 @@
     border-color: $couleur  ;
 }
 
-/// création d'ombres, un côté à la fois
-@mixin makeshadow($direction: "bottom", $etendue: 12, $flou: $etendue, $couleur: gray) {
-// bientôt code ici
+
+/// mixin générique du bouton pour valider la commande
+@mixin btn-commander ($largeur: 186, $hauteur: 50, $fontsize: 16) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-size: calc($fontsize/12)*1rem;
+    color: white;
+    @include makeradius ("all", calc($hauteur/2));
+    width: calc($largeur/12)*1rem;
+    height: calc($hauteur/12)*1rem;
+    @content;
 }
 
 
