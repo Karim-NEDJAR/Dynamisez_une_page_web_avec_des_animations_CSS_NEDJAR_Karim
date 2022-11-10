@@ -1,6 +1,3 @@
-
-
-
 /// keyframe faisant disparaitre le loading spinner
 @keyframes volatilisation {
 
@@ -34,11 +31,11 @@
 
 @keyframes sens-horaire {
     from {
-        transform: rotate(0deg);
+        transform: rotate (0deg);
     }
 
     to {
-        transform: rotate(360deg);
+        transform: rotate (360deg);
     }
 }
 
@@ -124,8 +121,6 @@
             @include spinner-haut-et-bas ($primaire) {
                 border-width: 0.05vw 0.1vw 0.7vw 0.1vw;
             }
-
-
         }
 
         &__bas {
@@ -133,8 +128,6 @@
             @include spinner-haut-et-bas ($secondaire) {
                 border-width: 0.7vw 0.1vw 0.05vw 0.1vw;
             }
-
-
         }
 
         &__milieu {
@@ -158,20 +151,14 @@
                 background-clip: padding-box;
                 width: 2vw;
                 height: 2vw;
-                @include makeradius-pourcent("all",50) ; 
+                @include makeradius-pourcent("all", 50);
                 animation: invisibilisation 250ms linear infinite alternate;
 
             }
 
             &--gauche {
-
                 @include spinner-droite-et-gauche ($secondaire);
-
             }
-
         }
-
-
     }
-
 }

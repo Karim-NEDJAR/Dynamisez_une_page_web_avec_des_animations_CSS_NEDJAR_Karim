@@ -1,3 +1,6 @@
+/// Police pour le logo et les titres: Shrikhand
+/// Police pour le texte: Roboto
+
 html {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
@@ -6,18 +9,14 @@ html {
     @include tablette {
         font-size: 15px;
         $fontsize: 15;
-            }
-
-    ;
+    }
 
     @include ordinateur {
         font-size: 18px;
         $fontsize: 18;
-           }
-
+    }
 }
 
 .font-titres {
     font-family: 'Shrikhand', cursive;
 }
-

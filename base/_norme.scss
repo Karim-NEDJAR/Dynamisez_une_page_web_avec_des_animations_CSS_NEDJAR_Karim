@@ -15,37 +15,48 @@ html {
     }
 
 }
+
 /// @keyframes pour fairer apparaitre le body en retard, à la fin de l'animation du loading- spinner
 @keyframes body-apparition {
 
     0%,
     70% {
         opacity: 0;
-        display: none;
-    }
-    70%, 95% {
+         }
+
+    70%,
+    95% {
         opacity: 0.5;
     }
 
     95%,
     100% {
-        opacity: 1;
-        display: block;
+        opacity: 1;         
     }
 }
+
 ///body
 .body {
     width: 100%;
     max-width: 1920px;
-    min-width: 300px;
-    animation: body-apparition 3000ms linear forwards;
-   
+    min-width: 300px;  
 }
 
 
 ///main
 .main {
     width: 100%;
+
+    @include tablette {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    @include ordinateur {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
 }
 
 

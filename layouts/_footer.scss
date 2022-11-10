@@ -1,5 +1,20 @@
 .footer {
     width: 100%;
+
+    @include tablette {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include ordinateur {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
     height: calc(196/12)*1rem;
     background-color: $bg-footer;
     padding: calc(25/12)*1rem calc(25/12)*1rem;
@@ -9,9 +24,29 @@
 
         color: white;
 
+        @include tablette {
+            width: 50%;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+
+        @include ordinateur {
+            width: 25%;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+
         & p {
             margin: calc(7/12)*1rem 0;
             color: white;
+
+            @include tablette {
+                padding-right: calc(20/12)*1rem;
+            }
+
+            @include ordinateur {
+                padding-right: calc(20/12)*1rem;
+            }
         }
     }
 
@@ -19,6 +54,17 @@
     &__logo {
         width: calc(100/12)*1rem;
         height: calc(20/12)*1rem;
+
+        @include tablette {
+            width: 100%;
+            border-bottom: 1px solid white;
+        }
+
+        @include ordinateur {
+            width: 100%;
+            border-bottom: 1px solid white;
+        }
+
         overflow: hidden;
         margin-bottom: calc(22/12)*1rem;
 
@@ -35,6 +81,14 @@
         display: flex;
         flex-flow: row nowrap;
 
+        @include tablette {
+            margin: calc(7/12)*1rem 0;
+        }
+
+        @include ordinateur {
+            margin: calc(7/12)*1rem 0;
+        }
+
         &>i {
             width: calc(15/12)*1rem;
             height: calc(15/12)*1rem;
@@ -46,16 +100,21 @@
 
         &>span {
             display: inline-block;
-
-
         }
-
     }
 
     &__devenir {
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
+
+        @include tablette {
+            margin: calc(7/12)*1rem 0;
+        }
+
+        @include ordinateur {
+            margin: calc(7/12)*1rem 0;
+        }
 
         &>i {
             display: inline-block;
@@ -77,11 +136,28 @@
     &__mentions {
         width: 100%;
         font-weight: normal;
+
+        @include tablette {
+            margin: calc(7/12)*1rem 0;
+        }
+
+        @include ordinateur {
+            margin: calc(7/12)*1rem 0;
+        }
+
     }
 
     &__contact {
         width: 100%;
         font-weight: normal;
+
+        @include tablette {
+            margin: calc(7/12)*1rem 0;
+        }
+
+        @include ordinateur {
+            margin: calc(7/12)*1rem 0;
+        }
 
     }
 }

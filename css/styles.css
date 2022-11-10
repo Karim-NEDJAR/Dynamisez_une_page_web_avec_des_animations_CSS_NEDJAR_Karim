@@ -20,25 +20,34 @@ html {
 @keyframes body-apparition {
   0%, 70% {
     opacity: 0;
-    display: none;
   }
   70%, 95% {
     opacity: 0.5;
   }
   95%, 100% {
     opacity: 1;
-    display: block;
   }
 }
 .body {
   width: 100%;
   max-width: 1920px;
   min-width: 300px;
-  animation: body-apparition 3000ms linear forwards;
 }
 
 .main {
   width: 100%;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .main {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
 
 * a {
@@ -113,10 +122,10 @@ html {
 }
 @keyframes sens-horaire {
   from {
-    transform: rotate(0deg);
+    transform: rotate 0deg;
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate 360deg;
   }
 }
 @keyframes sens-anti-horaire {
@@ -301,18 +310,70 @@ html {
   padding: 2.0833333333rem 2.0833333333rem;
   font-size: 1.3333333333rem;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .footer a {
   color: white;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer a {
+    width: 50%;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer a {
+    width: 25%;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 }
 .footer a p {
   margin: 0.5833333333rem 0;
   color: white;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer a p {
+    padding-right: 1.6666666667rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer a p {
+    padding-right: 1.6666666667rem;
+  }
 }
 .footer__logo {
   width: 8.3333333333rem;
   height: 1.6666666667rem;
   overflow: hidden;
   margin-bottom: 1.8333333333rem;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer__logo {
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__logo {
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
 }
 .footer__logo > img {
   width: 100%;
@@ -324,6 +385,16 @@ html {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer__proposer {
+    margin: 0.5833333333rem 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__proposer {
+    margin: 0.5833333333rem 0;
+  }
 }
 .footer__proposer > i {
   width: 1.25rem;
@@ -340,6 +411,16 @@ html {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer__devenir {
+    margin: 0.5833333333rem 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__devenir {
+    margin: 0.5833333333rem 0;
+  }
 }
 .footer__devenir > i {
   display: inline-block;
@@ -358,11 +439,33 @@ html {
   width: 100%;
   font-weight: normal;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer__mentions {
+    margin: 0.5833333333rem 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__mentions {
+    margin: 0.5833333333rem 0;
+  }
+}
 .footer__contact {
   width: 100%;
   font-weight: normal;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer__contact {
+    margin: 0.5833333333rem 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer__contact {
+    margin: 0.5833333333rem 0;
+  }
+}
 
+/************************ LA PAGE D'ACCUEIL *******************/
+/********************* section presentation / réservation **************/
 .pres {
   width: 100%;
   background-color: #f6f6f6;
@@ -420,16 +523,6 @@ html {
   margin: 1.5rem 0 0 0;
   padding-left: 1rem;
 }
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .pres__soustitre {
-    width: 50%;
-  }
-}
-@media screen and (min-width: 992px) {
-  .pres__soustitre {
-    width: 50%;
-  }
-}
 .pres__btn {
   width: 18.1666666667rem;
   height: 4.1666666667rem;
@@ -461,10 +554,25 @@ html {
   box-shadow: 0 0.5rem 0.5rem #9f9f9f;
 }
 
+/************************** section fonctionnement *******************/
 .fonc {
   width: 100%;
   background-color: #fff;
   padding: 0 1.6666666667rem 0 2.6666666667rem;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fonc {
+    width: 50%;
+    margin-top: 0;
+    padding-top: 0.8333333333rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonc {
+    width: 50%;
+    margin-top: 0;
+    padding-top: 0.8333333333rem;
+  }
 }
 .fonc__titre {
   width: 100%;
@@ -477,6 +585,16 @@ html {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fonc__titre {
+    padding-top: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonc__titre {
+    padding-top: 2rem;
+  }
 }
 .fonc__titre--size {
   font-size: 2rem;
@@ -498,6 +616,16 @@ html {
   border-bottom-left-radius: 1.625rem;
   border-bottom-right-radius: 1.625rem;
   box-shadow: 0 0.6666666667rem 0.6666666667rem #e5e5e5;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fonc__carte1 {
+    margin-top: 16.6666666667rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonc__carte1 {
+    margin-top: 16.6666666667rem;
+  }
 }
 .fonc__carte1:hover {
   background: #f5edff;
@@ -538,6 +666,16 @@ html {
   border-bottom-right-radius: 1.625rem;
   box-shadow: 0 0.6666666667rem 0.6666666667rem #e5e5e5;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fonc__carte2 {
+    margin-top: 16.6666666667rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonc__carte2 {
+    margin-top: 16.6666666667rem;
+  }
+}
 .fonc__carte2:hover {
   background: #f5edff;
 }
@@ -577,6 +715,16 @@ html {
   border-bottom-right-radius: 1.625rem;
   box-shadow: 0 0.6666666667rem 0.6666666667rem #e5e5e5;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fonc__carte3 {
+    margin-top: 16.6666666667rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .fonc__carte3 {
+    margin-top: 16.6666666667rem;
+  }
+}
 .fonc__carte3:hover {
   background: #f5edff;
 }
@@ -601,11 +749,24 @@ html {
   font-weight: bold;
 }
 
+/***********************section restaurants ***********************/
 .resto {
   width: 100%;
   background-color: #f6f6f6;
   padding: 0 1.6666666667rem 3.6666666667rem 1.6666666667rem;
   margin-top: 5.5rem;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .resto {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .resto {
+    width: 50%;
+    margin-top: 0;
+  }
 }
 .resto__titre {
   width: 100%;
@@ -1014,8 +1175,8 @@ html {
   background: #f6f6f6;
   /*même background que <menu> pour cacher le blanc apparu, 
   car <menu>  étant  remonté de 38px (top:-38px)  il a laissé  apparaître 38px de blanc
-   du  background  de  <restaurant> sous <menu>, voir ci-dessous le padding-bottom de <menu>,
-   les autres solutions pour compenser ce blanc me paraissaient lourdes */
+   du  background  de  <restaurant> sous <menu>, voir ci-dessous le padding-bottom de <menu>. Solution pas très élégante,
+   mais les autres solutions pour compenser ce blanc me paraissaient lourdes */
 }
 .restaurant .devanture {
   width: 100%;
@@ -1045,9 +1206,21 @@ html {
   padding-right: 1rem;
   border-top-left-radius: 3.1666666667rem;
   border-top-right-radius: 3.1666666667rem;
-  /* fin $SERVICE */
-  /* fin $SERVICE */
-  /* fin $SERVICE */
+  /** boucle sur les services, voir la liste $services dans le fichier des variables*/
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurant .menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurant .menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 .restaurant .menu__resto {
   width: 100%;
@@ -1105,6 +1278,24 @@ html {
   width: 100%;
   margin-bottom: 3rem;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurant .menu__entree {
+    width: 49%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurant .menu__entree {
+    width: 49%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
 .restaurant .menu__entree__titre {
   padding-left: 0.5833333333rem;
   padding-bottom: 1rem;
@@ -1116,7 +1307,7 @@ html {
   font-weight: normal;
   opacity: 0;
   animation: apparition-service 300ms 0s cubic-bezier(0.2, 0.1, 0.55, 0.9) forwards;
-  /*soulignement du titre  sur 40px */
+  /*soulignement du titre  sur une longueur de 40px et une épaisseur de 3px  */
 }
 .restaurant .menu__entree__titre::after {
   content: "";
@@ -1442,7 +1633,25 @@ html {
 }
 .restaurant .menu__plat {
   width: 100%;
-  margin-bottom: 3.8333333333rem;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurant .menu__plat {
+    width: 49%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurant .menu__plat {
+    width: 49%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 .restaurant .menu__plat__titre {
   padding-left: 0.5833333333rem;
@@ -1455,7 +1664,7 @@ html {
   font-weight: normal;
   opacity: 0;
   animation: apparition-service 300ms 1s cubic-bezier(0.2, 0.1, 0.55, 0.9) forwards;
-  /*soulignement du titre  sur 40px */
+  /*soulignement du titre  sur une longueur de 40px et une épaisseur de 3px  */
 }
 .restaurant .menu__plat__titre::after {
   content: "";
@@ -1783,6 +1992,24 @@ html {
   width: 100%;
   margin-bottom: 3rem;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .restaurant .menu__dessert {
+    width: 49%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurant .menu__dessert {
+    width: 49%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
 .restaurant .menu__dessert__titre {
   padding-left: 0.5833333333rem;
   padding-bottom: 1rem;
@@ -1794,7 +2021,7 @@ html {
   font-weight: normal;
   opacity: 0;
   animation: apparition-service 300ms 2s cubic-bezier(0.2, 0.1, 0.55, 0.9) forwards;
-  /*soulignement du titre  sur 40px */
+  /*soulignement du titre  sur une longueur de 40px et une épaisseur de 3px  */
 }
 .restaurant .menu__dessert__titre::after {
   content: "";
@@ -2119,6 +2346,7 @@ html {
   animation: rotation-coche 600ms linear;
 }
 
+/************* le bouton pour valider la commande ********/
 .commander-menu {
   display: flex;
   justify-content: center;
@@ -2143,7 +2371,7 @@ html {
   box-shadow: 0 0.5rem 0.8333333333rem #a1a1a1;
 }
 
-/** rotation de la coche */
+/********* rotation de la coche ***********/
 @keyframes rotation-coche {
   0% {
     transform: rotate(0deg);
@@ -2155,7 +2383,7 @@ html {
     transform: rotate(360deg);
   }
 }
-/**apparition des menus**/
+/************ apparition des menus *******/
 @keyframes apparition-menu {
   0% {
     transform-origin: bottom;
@@ -2171,7 +2399,7 @@ html {
     opacity: 1;
   }
 }
-/**apparition des SERVICES**/
+/*********  apparition des SERVICES (entrées / plats / desserts) *******/
 @keyframes apparition-service {
   0% {
     opacity: 0.2;

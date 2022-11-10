@@ -1,6 +1,6 @@
-/// LA PAGE D'ACCUEIL 
+/************************ LA PAGE D'ACCUEIL *******************/
 
-///section presentation / réservation
+/********************* section presentation / réservation **************/
 .pres {
     width: 100%;
     background-color: $bg-pres;
@@ -64,18 +64,7 @@
         color: $c-soustitre;
         text-align: center;
         margin: calc(18/12)*1rem 0 0 0;
-        padding-left: calc(12/12)*1rem;
-
-        @include tablette {
-            width: 50%;
-
-        }
-
-        @include ordinateur {
-            width: 50%;
-
-        }
-
+        padding-left: calc(12/12)*1rem;   
     }
 
     &__btn {
@@ -103,13 +92,26 @@
             box-shadow: 0 calc(6/12)*1rem calc(6/12)*1rem darken($c-btn-shadow, 15%);
         }
     }
-
-
 }
 
-///section fonctionnement
+
+/************************** section fonctionnement *******************/
 .fonc {
     width: 100%;
+
+    @include tablette {
+        width: 50%;
+        margin-top: 0; //  calc(72/12)*1rem;
+        padding-top: calc(10/12)*1rem;
+    }
+
+    @include ordinateur {
+        width: 50%;
+        margin-top: 0; ///   calc(72/12)*1rem;
+        padding-top: calc(10/12)*1rem;
+    }
+
+
     background-color: $bg-fonc;
     padding: 0 calc(20/12)*1rem 0 calc(32/12)*1rem;
 
@@ -125,6 +127,15 @@
         justify-content: flex-start;
         align-items: center;
 
+        @include tablette {
+            padding-top: calc(24/12)*1rem;
+        }
+
+        @include ordinateur {
+            padding-top: calc(24/12)*1rem;
+        }
+
+
         &--size {
             font-size: calc(24/12)*1rem;
             margin: 0;
@@ -139,6 +150,17 @@
             padding-top: calc(12/12)*1rem;
             background: linear-gradient(#fefefe 0%, $bg-card-fonc 8%);
             margin-bottom: calc(20/12)*1rem;
+
+            @include tablette {
+
+                margin-top: calc(200/12)*1rem;
+            }
+
+            @include ordinateur {
+
+                margin-top: calc(200/12)*1rem;
+            }
+
             display: flex;
             flex-flow: row nowrap;
             justify-content: flex-start;
@@ -175,19 +197,25 @@
                 font-size: calc(16/12)*1rem;
                 font-weight: bold;
             }
-
         }
-
-
-
-
     }
-
 }
 
-///section restaurants
+
+/***********************section restaurants ***********************/
 .resto {
     width: 100%;
+
+    @include tablette {
+        width: 50%;
+        margin-top: 0;
+    }
+
+    @include ordinateur {
+        width: 50%;
+        margin-top: 0;
+    }
+
     background-color: $bg-rest;
     padding: 0 calc((20 / 12)*1rem) calc((44 / 12)*1rem) calc((20 / 12)*1rem);
     margin-top: calc((66 / 12)*1rem);
@@ -323,31 +351,22 @@
                         }
                     }
                 }
-
-                //fin de --jaime
             }
-
-            // fin de __infos
         }
-
-        // fin de resto{i}
     }
-
-    // end of  FOR
-
 }
 
 
-/*** LES 4 PAGES DES MENUS DES RESTAURANTS ***/ 
-// voir les listes dans le fichier des variables
+/*** LES 4 PAGES DES MENUS DES RESTAURANTS ***/
+//  les listes utilisées ici  se trouvent dans le fichier des variables
 .restaurant {
     width: 100%;
     margin: 0;
     background: $bg-rest; // #f6f6f6; 
     /*même background que <menu> pour cacher le blanc apparu, 
     car <menu>  étant  remonté de 38px (top:-38px)  il a laissé  apparaître 38px de blanc
-     du  background  de  <restaurant> sous <menu>, voir ci-dessous le padding-bottom de <menu>,
-     les autres solutions pour compenser ce blanc me paraissaient lourdes */
+     du  background  de  <restaurant> sous <menu>, voir ci-dessous le padding-bottom de <menu>. Solution pas très élégante,
+     mais les autres solutions pour compenser ce blanc me paraissaient lourdes */
 
     & .devanture {
         width: 100%;
@@ -379,6 +398,19 @@
         padding-left: calc(14/12)*1rem;
         padding-right: calc(12/12)*1rem;
         @include makeradius ("top", 38);
+
+        @include tablette {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        @include ordinateur {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
 
 
         &__resto {
@@ -439,23 +471,28 @@
             }
         }
 
-        // boucle @each sur la liste des services
-
+        /** boucle sur les services, voir la liste $services dans le fichier des variables*/
 
         @for $k from 1 through 3 {
 
-
             &__#{nth($services,$k)} {
                 width: 100%;
+                margin-bottom: calc(36/12)*1rem;
 
-
-
-                @if (nth($services, $k)=="plat") {
-                    margin-bottom: calc(46/12)*1rem;
+                @include tablette {
+                    width: 49%;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
                 }
 
-                @else {
-                    margin-bottom: calc(36/12)*1rem;
+                @include ordinateur {
+                    width: 49%;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
                 }
 
 
@@ -469,11 +506,11 @@
                     text-transform: uppercase;
                     font-weight: normal;
                     opacity: 0;
-                    animation: apparition-service 300ms nth($delai-s, $k) cubic-bezier(0.2,0.1,0.55,0.9)  forwards;
+                    animation: apparition-service 300ms nth($delai-s, $k) cubic-bezier(0.2, 0.1, 0.55, 0.9) forwards;
 
 
 
-                    /*soulignement du titre  sur 40px */
+                    /*soulignement du titre  sur une longueur de 40px et une épaisseur de 3px  */
                     &::after {
                         content: "";
                         display: block;
@@ -487,7 +524,6 @@
 
                 @for $i from 1 through 3 {
                     &-#{$i} {
-
 
                         width: 100%;
                         height: calc(68/12)*1rem;
@@ -504,10 +540,7 @@
                         cursor: pointer;
                         opacity: 0;
                         $index: (($k - 1) * 3)+$i;
-                      //  animation: apparition-menu 300ms nth($delai-m, $index) cubic-bezier(0.2,0.1,0.55,0.9) forwards;
                         animation: apparition-menu 450ms nth($delai-m, $index) linear forwards;
-
-
 
                         &__recette {
                             height: 100%;
@@ -530,7 +563,6 @@
                                 text-overflow: ellipsis;
                                 white-space: nowrap;
                                 padding-top: calc(14/12)*1rem;
-
                             }
 
                             &__detail {
@@ -574,7 +606,6 @@
                         }
 
                         &__selectionner {
-
                             display: flex;
                             flex-flow: row nowrap;
                             justify-content: center;
@@ -609,19 +640,13 @@
 
                     }
                 }
-
-
             }
-
-
-            /* fin $SERVICE */
         }
-
-        //fin EACH 
     }
 }
 
-/// le bouton pour valider la commande
+
+/************* le bouton pour valider la commande ********/
 .commander-menu {
     @include btn-commander ();
     background: linear-gradient($secondaire, $primaire);
@@ -636,12 +661,14 @@
 
 }
 
-/** rotation de la coche */
+
+/********* rotation de la coche ***********/
 @keyframes rotation-coche {
 
     0% {
         transform: rotate(0deg);
     }
+
     50% {
         transform: rotate(90deg);
     }
@@ -652,34 +679,33 @@
 
 }
 
-/**apparition des menus**/
 
-
+/************ apparition des menus *******/
 @keyframes apparition-menu {
 
     0% {
         transform-origin: bottom;
-        transform: scaleY(0.8) ;
+        transform: scaleY(0.8);
         opacity: 0.2;
     }
-    80%{
 
-        
+    80% {
+
+
         opacity: 0.4;
     }
 
 
     100% {
 
-       transform-origin: bottom;
-       transform: scaleY(1) ;
+        transform-origin: bottom;
+        transform: scaleY(1);
         opacity: 1;
     }
-
 }
 
 
-/**apparition des SERVICES**/
+/*********  apparition des SERVICES (entrées / plats / desserts) *******/
 
 
 @keyframes apparition-service {
@@ -695,5 +721,4 @@
     100% {
         opacity: 1;
     }
-
 }
