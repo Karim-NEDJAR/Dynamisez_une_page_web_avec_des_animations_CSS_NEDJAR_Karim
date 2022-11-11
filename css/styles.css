@@ -315,7 +315,7 @@ html {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 }
 @media screen and (min-width: 992px) {
@@ -323,7 +323,7 @@ html {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
   }
 }
 .footer a {
@@ -335,12 +335,19 @@ html {
     flex-flow: row wrap;
     justify-content: center;
   }
+  .footer a:first-of-type {
+    border-top: 1px solid white;
+  }
+  .footer a:first-of-type + a {
+    border-top: 1px solid white;
+  }
 }
 @media screen and (min-width: 992px) {
   .footer a {
     width: 25%;
     flex-flow: row wrap;
     justify-content: center;
+    border-bottom: 1px solid white;
   }
 }
 .footer a p {
@@ -366,13 +373,11 @@ html {
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .footer__logo {
     width: 100%;
-    border-bottom: 1px solid white;
   }
 }
 @media screen and (min-width: 992px) {
   .footer__logo {
     width: 100%;
-    border-bottom: 1px solid white;
   }
 }
 .footer__logo > img {
@@ -1277,13 +1282,25 @@ html {
 .restaurant .menu__entree {
   width: 100%;
   margin-bottom: 3rem;
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .restaurant .menu__entree {
     width: 49%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 }
@@ -1292,7 +1309,7 @@ html {
     width: 49%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 }
@@ -1306,7 +1323,7 @@ html {
   text-transform: uppercase;
   font-weight: normal;
   opacity: 0;
-  animation: apparition-service 300ms 0s cubic-bezier(0.2, 0.1, 0.55, 0.9) forwards;
+  animation: apparition 700ms 0ms linear forwards;
   /*soulignement du titre  sur une longueur de 40px et une épaisseur de 3px  */
 }
 .restaurant .menu__entree__titre::after {
@@ -1334,7 +1351,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 300ms linear forwards;
+  animation: apparition 700ms 350ms ease-in-out forwards;
 }
 .restaurant .menu__entree-1__recette {
   height: 100%;
@@ -1439,7 +1456,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 600ms linear forwards;
+  animation: apparition 700ms 700ms ease-in-out forwards;
 }
 .restaurant .menu__entree-2__recette {
   height: 100%;
@@ -1544,7 +1561,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 900ms linear forwards;
+  animation: apparition 700ms 1050ms ease-in-out forwards;
 }
 .restaurant .menu__entree-3__recette {
   height: 100%;
@@ -1631,16 +1648,133 @@ html {
 .restaurant .menu__entree-3:hover > div + div > i {
   animation: rotation-coche 600ms linear;
 }
+.restaurant .menu__entree-4 {
+  width: 100%;
+  height: 5.6666666667rem;
+  margin-bottom: 1.1666666667rem;
+  padding-left: 1rem;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
+  cursor: pointer;
+  opacity: 0;
+  animation: apparition 700ms 1400ms ease-in-out forwards;
+}
+.restaurant .menu__entree-4__recette {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.restaurant .menu__entree-4__recette__nom {
+  height: 50%;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 1.1666666667rem;
+}
+.restaurant .menu__entree-4__recette__detail {
+  height: 50%;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+.restaurant .menu__entree-4__recette__detail--variante {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.25rem;
+  color: #1f1f1f;
+}
+.restaurant .menu__entree-4__recette__detail--prix {
+  width: 5rem;
+  height: 100%;
+  display: inline-block;
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 0.5833333333rem;
+  padding-bottom: 0.5833333333rem;
+  padding-left: 1rem;
+  margin-right: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.restaurant .menu__entree-4__selectionner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #99E2D0;
+  width: 5rem;
+  height: 100%;
+  overflow: hidden;
+  margin-right: -5rem;
+  flex-shrink: 0;
+  transition: margin-right 400ms linear;
+}
+.restaurant .menu__entree-4__selectionner > i {
+  font-size: 1.8333333333rem;
+  font-weight: bold;
+}
+.restaurant .menu__entree-4:hover > div + div {
+  margin-right: 0;
+  transition: margin-right 600ms linear;
+}
+.restaurant .menu__entree-4:hover > div + div > i {
+  animation: rotation-coche 600ms linear;
+}
 .restaurant .menu__plat {
   width: 100%;
   margin-bottom: 3rem;
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .restaurant .menu__plat {
     width: 49%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 }
@@ -1649,7 +1783,7 @@ html {
     width: 49%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 }
@@ -1663,7 +1797,7 @@ html {
   text-transform: uppercase;
   font-weight: normal;
   opacity: 0;
-  animation: apparition-service 300ms 1s cubic-bezier(0.2, 0.1, 0.55, 0.9) forwards;
+  animation: apparition 700ms 1100ms linear forwards;
   /*soulignement du titre  sur une longueur de 40px et une épaisseur de 3px  */
 }
 .restaurant .menu__plat__titre::after {
@@ -1691,7 +1825,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 1300ms linear forwards;
+  animation: apparition 700ms 1400ms ease-in-out forwards;
 }
 .restaurant .menu__plat-1__recette {
   height: 100%;
@@ -1796,7 +1930,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 1600ms linear forwards;
+  animation: apparition 700ms 1750ms ease-in-out forwards;
 }
 .restaurant .menu__plat-2__recette {
   height: 100%;
@@ -1901,7 +2035,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 1900ms linear forwards;
+  animation: apparition 700ms 2100ms ease-in-out forwards;
 }
 .restaurant .menu__plat-3__recette {
   height: 100%;
@@ -1991,13 +2125,25 @@ html {
 .restaurant .menu__dessert {
   width: 100%;
   margin-bottom: 3rem;
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
+  /****** test d'entrée dans la boucle car  traitement spécial pour 
+      le restaurant << La note enchantée >> qui contrairement aux autres 
+      possède 4 entrées au lieu de 3   ***********/
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .restaurant .menu__dessert {
     width: 49%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 }
@@ -2006,7 +2152,7 @@ html {
     width: 49%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 }
@@ -2020,7 +2166,7 @@ html {
   text-transform: uppercase;
   font-weight: normal;
   opacity: 0;
-  animation: apparition-service 300ms 2s cubic-bezier(0.2, 0.1, 0.55, 0.9) forwards;
+  animation: apparition 700ms 2200ms linear forwards;
   /*soulignement du titre  sur une longueur de 40px et une épaisseur de 3px  */
 }
 .restaurant .menu__dessert__titre::after {
@@ -2048,7 +2194,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 2300ms linear forwards;
+  animation: apparition 700ms 2450ms ease-in-out forwards;
 }
 .restaurant .menu__dessert-1__recette {
   height: 100%;
@@ -2153,7 +2299,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 2600ms linear forwards;
+  animation: apparition 700ms 2800ms ease-in-out forwards;
 }
 .restaurant .menu__dessert-2__recette {
   height: 100%;
@@ -2258,7 +2404,7 @@ html {
   box-shadow: 0.5833333333rem 0.5833333333rem 1rem #e8e8e8;
   cursor: pointer;
   opacity: 0;
-  animation: apparition-menu 450ms 2900ms linear forwards;
+  animation: apparition 700ms 3150ms ease-in-out forwards;
 }
 .restaurant .menu__dessert-3__recette {
   height: 100%;
@@ -2384,30 +2530,18 @@ html {
   }
 }
 /************ apparition des menus *******/
-@keyframes apparition-menu {
+@keyframes apparition {
   0% {
     transform-origin: bottom;
     transform: scaleY(0.8);
-    opacity: 0.2;
+    opacity: 0.1;
   }
-  80% {
-    opacity: 0.4;
+  70% {
+    opacity: 0.2;
   }
   100% {
     transform-origin: bottom;
     transform: scaleY(1);
-    opacity: 1;
-  }
-}
-/*********  apparition des SERVICES (entrées / plats / desserts) *******/
-@keyframes apparition-service {
-  0% {
-    opacity: 0.2;
-  }
-  70% {
-    opacity: 0.4;
-  }
-  100% {
     opacity: 1;
   }
 }

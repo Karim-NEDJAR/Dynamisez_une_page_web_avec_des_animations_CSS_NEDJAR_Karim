@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <link rel="stylesheet" type="text/css" href="../vendors/normalize.css">
-   <link rel="stylesheet" type="text/css" href="../css/styles.css">
+   <link rel="stylesheet" type="text/css" href="../css/prefixed/styles.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
       integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-   <title>La palette du goût</title>
+   <title>À la française</title>
 
 </head>
 
@@ -30,20 +30,142 @@
          </a>
       </div>
    </header>
-   <main>
-      <section>
-        FRANCAISE
+   <main class="restaurant">
+      <div class="devanture">
+         <img src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg">
+      </div>
+      <section class="menu">
+         <div class="menu__resto">
+            <h1 class="menu__resto--nom font-titres">À la française</h1>
+            <div class="menu__resto--jaime"> <i class="fa-solid fa-heart"></i> <i class="fa-regular fa-heart"></i>
+            </div>
+         </div>
+         <!-- ENTREES-->
+         <div class="menu__entree">
+            <div class="menu__entree__titre">Entrées</div>
+            <div class="menu__entree-1">
+               <div class="menu__entree-1__recette">
+                  <div class="menu__entree-1__recette__nom">Tartare de poulpe acidulé</div>
+                  <div class="menu__entree-1__recette__detail">
+                     <span class="menu__entree-1__recette__detail--variante">Aux zestes d'orange</span>
+                     <span class="menu__entree-1__recette__detail--prix">25€</span>
+                  </div>
+               </div>
+               <div class="menu__entree-1__selectionner">
+                  <i class="fa-regular fa-circle-check"></i>
+               </div>
+            </div>
+            <div class="menu__entree-2">
+               <div class="menu__entree-2__recette">
+                  <div class="menu__entree-2__recette__nom">Velouté de légumes d'antan</div>
+                  <div class="menu__entree-2__recette__detail">
+                     <span class="menu__entree-2__recette__detail--variante">Carotte, panais, topinambour</span>
+                     <span class="menu__entree-2__recette__detail--prix">35€</span>
+                  </div>
+               </div>
+               <div class="menu__entree-2__selectionner"> <i class="fa-regular fa-circle-check"></i> </div>
+            </div>
+            <div class="menu__entree-3">
+               <div class="menu__entree-3__recette">
+                  <div class="menu__entree-3__recette__nom">Soupe à l'oignon</div>
+                  <div class="menu__entree-3__recette__detail">
+                     <span class="menu__entree-3__recette__detail--variante">Revisitée</span>
+                     <span class="menu__entree-3__recette__detail--prix">20€</span>
+                  </div>
+               </div>
+               <div class="menu__entree-3__selectionner">
+                  <i class="fa-regular fa-circle-check"></i>
+               </div>
+            </div>
+         </div>
+         <!-- PLATS-->
+         <div class="menu__plat">
+            <div class="menu__plat__titre">Plats</div>
+            <div class="menu__plat-1">
+               <div class="menu__plat-1__recette">
+                  <div class="menu__plat-1__recette__nom">Coquilles Saint-Jacques</div>
+                  <div class="menu__plat-1__recette__detail">
+                     <span class="menu__plat-1__recette__detail--variante">Accompagnées d'une purée de panais</span>
+                     <span class="menu__plat-1__recette__detail--prix">40€</span>
+                  </div>
+               </div>
+               <div class="menu__plat-1__selectionner"> <i class="fa-regular fa-circle-check"></i> </div>
+            </div>
+            <div class="menu__plat-2">
+               <div class="menu__plat-2__recette">
+                  <div class="menu__plat-2__recette__nom">Magret de canard</div>
+                  <div class="menu__plat-2__recette__detail">
+                     <span class="menu__plat-2__recette__detail--variante">Et parmentier de pommes de terre</span>
+                     <span class="menu__plat-2__recette__detail--prix">35€</span>
+                  </div>
+               </div>
+               <div class="menu__plat-2__selectionner"> <i class="fa-regular fa-circle-check"></i> </div>
+            </div>
+            <div class="menu__plat-3">
+               <div class="menu__plat-3__recette">
+                  <div class="menu__plat-3__recette__nom">Pigeonneau d’Ille-et-Vilaine</div>
+                  <div class="menu__plat-3__recette__detail">
+                     <span class="menu__plat-3__recette__detail--variante">Sur son lit de gnocchis aux légumes</span>
+                     <span class="menu__plat-3__recette__detail--prix">44€</span>
+                  </div>
+               </div>
+               <div class="menu__plat-3__selectionner"> <i class="fa-regular fa-circle-check"></i> </div>
+            </div>
+         </div>
+         <!-- DESSERTS-->
+         <div class="menu__dessert">
+            <div class="menu__dessert__titre">Desserts</div>
+            <div class="menu__dessert-1">
+               <div class="menu__dessert-1__recette">
+                  <div class="menu__dessert-1__recette__nom">Pétales de violettes glacés</div>
+                  <div class="menu__dessert-1__recette__detail">
+                     <span class="menu__dessert-1__recette__detail--variante">Et purée de noisettes</span>
+                     <span class="menu__dessert-1__recette__detail--prix">18€</span>
+                  </div>
+               </div>
+               <div class="menu__dessert-1__selectionner"> <i class="fa-regular fa-circle-check"></i> </div>
+            </div>
+            <div class="menu__dessert-2">
+               <div class="menu__dessert-2__recette">
+                  <div class="menu__dessert-2__recette__nom">Fondant au chocolat</div>
+                  <div class="menu__dessert-2__recette__detail">
+                     <span class="menu__dessert-2__recette__detail--variante">Revisité</span>
+                     <span class="menu__dessert-2__recette__detail--prix">22€</span>
+                  </div>
+               </div>
+               <div class="menu__dessert-2__selectionner"> <i class="fa-regular fa-circle-check"></i> </div>
+            </div>
+            <div class="menu__dessert-3">
+               <div class="menu__dessert-3__recette">
+                  <div class="menu__dessert-3__recette__nom">Millefeuille croustillant</div>
+                  <div class="menu__dessert-3__recette__detail">
+                     <span class="menu__dessert-3__recette__detail--variante">Myrtilles et pâte d’amande</span>
+                     <span class="menu__dessert-3__recette__detail--prix">23€</span>
+                  </div>
+               </div>
+               <div class="menu__dessert-3__selectionner"> <i class="fa-regular fa-circle-check"></i> </div>
+            </div>
+         </div>
+         <!-- BOUTON COMMANDER-->
+         <div class="commander-menu">Commander</button>
       </section>
-      <section> </section>
-      <section> </section>
-
    </main>
-   <footer>
-
+   <!-- FOOTER-->
+   <footer class="footer">
+      <div class="footer__logo"> <img src="../images/logo/ohmyfood.png" alt="logo ohmyfood"></div>
+      <a href="#">
+         <p class="footer__proposer"> <i class="fa-solid fa-utensils"></i> <span>Proposer un restaurant</span></p>
+      </a>
+      <a href="#">
+         <p class="footer__devenir"><i class="fa-solid fa-handshake-angle"></i> <span>Devenir partenaire</span></p>
+      </a>
+      <a href="#">
+         <p class="footer__mentions"> Mentions légales</p>
+      </a>
+      <a href="mailto: contact@ohmyfood.com">
+         <p class="footer__contact">Contact</p>
+      </a>
    </footer>
-
-
-
 </body>
 
 </html>

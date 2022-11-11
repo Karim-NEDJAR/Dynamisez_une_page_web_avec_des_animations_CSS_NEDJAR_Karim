@@ -41,7 +41,7 @@ Ménilmontant
         Au piment d'Espelette et à la truffe noire
         23€  
   
----
+---------------------------------------------------------
 
 La note enchantée
 Charonne
@@ -89,7 +89,7 @@ Charonne
         Déstructurée
         23€
 
----
+------------------------------------------------------------
 
 À la française
 Cité Rouge
@@ -132,7 +132,7 @@ Cité Rouge
         Millefeuille croustillant
         Myrtilles et pâte d’amande
         23€
----     
+------------------------------------------------     
 
 Le délice des sens
 Folie-Méricourt

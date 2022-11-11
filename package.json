@@ -4,7 +4,9 @@
   "description": "Ohmyfood est une entreprise proposant des services.\r Grâce à son site web, les clients peuvent eux-mêmes composer et commander en ligne leur propre menu dans des restaurants gastronomiques parisiens haut de gamme. Ils réduisent ainsi drastiquement les temps d’attente de préparation et de consultation de la carte sur place. Leur repas est prêt dès leur arrivée. Idéal pour les clients pressés!",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./scss/styles.scss:./css/styles.css -w --style expanded",
+    "sass-prefix": "sass ./scss/styles.scss:./css/styles.css  --style expanded && postcss ./css/styles.css --use autoprefixer -d ./css/prefixed/",
+    "sass": "sass ./scss/styles.scss:./css/styles.css  --style expanded",
+    "sassw": "sass ./scss/styles.scss:./css/styles.css -w --style expanded",
     "prefix": "postcss ./css/styles.css --use autoprefixer -d ./css/prefixed/"
   },
   "repository": {

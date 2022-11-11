@@ -45,22 +45,23 @@ $primaire-sombre: rgb(82, 31, 137);
 /*** PAGES MENUS******/
 /** liste des délais (animation-delay) pour les services*/
 $delai-s: (
-    0s,
-    1s,
-    2s
+    0ms,
+    1100ms,
+    2200ms
 );
 /** liste des délais du MENU (cartes)*/
 
 $delai-m: (
-    300ms,
-    600ms,
-    900ms,
-    1300ms,
-    1600ms,
-    1900ms,
-    2300ms,
-    2600ms,
-    2900ms
+    350ms,
+    700ms,
+    1050ms,
+    1400ms,
+    1750ms,
+    2100ms,
+    2450ms,
+    2800ms,
+    3150ms,
+    3500ms
 );
 
 

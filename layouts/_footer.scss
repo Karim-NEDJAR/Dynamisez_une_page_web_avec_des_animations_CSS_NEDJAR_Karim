@@ -5,14 +5,14 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
     }
 
     @include ordinateur {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
     }
 
     height: calc(196/12)*1rem;
@@ -28,12 +28,21 @@
             width: 50%;
             flex-flow: row wrap;
             justify-content: center;
+
+            &:first-of-type {
+                border-top: 1px solid white;
+
+                &+a {
+                    border-top: 1px solid white;
+                }
+            }
         }
 
         @include ordinateur {
             width: 25%;
             flex-flow: row wrap;
             justify-content: center;
+            border-bottom: 1px solid white;
         }
 
         & p {
@@ -57,12 +66,10 @@
 
         @include tablette {
             width: 100%;
-            border-bottom: 1px solid white;
         }
 
         @include ordinateur {
             width: 100%;
-            border-bottom: 1px solid white;
         }
 
         overflow: hidden;
@@ -130,7 +137,6 @@
         &>span {
             display: inline-block;
         }
-
     }
 
     &__mentions {
@@ -144,7 +150,6 @@
         @include ordinateur {
             margin: calc(7/12)*1rem 0;
         }
-
     }
 
     &__contact {
@@ -158,6 +163,5 @@
         @include ordinateur {
             margin: calc(7/12)*1rem 0;
         }
-
     }
 }
