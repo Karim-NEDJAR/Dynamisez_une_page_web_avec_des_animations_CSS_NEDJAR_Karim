@@ -64,7 +64,7 @@
         color: $c-soustitre;
         text-align: center;
         margin: calc(18/12)*1rem 0 0 0;
-        padding-left: calc(12/12)*1rem;   
+        padding-left: calc(12/12)*1rem;
     }
 
     &__btn {
@@ -663,6 +663,7 @@
 
 
 /********* rotation de la coche ***********/
+
 @keyframes rotation-coche {
 
     0% {
