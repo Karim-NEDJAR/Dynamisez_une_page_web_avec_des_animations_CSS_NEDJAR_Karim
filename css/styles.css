@@ -17,21 +17,15 @@ html {
   box-sizing: inherit;
 }
 
-@keyframes body-apparition {
-  0%, 70% {
-    opacity: 0;
-  }
-  70%, 95% {
-    opacity: 0.5;
-  }
-  95%, 100% {
-    opacity: 1;
-  }
-}
 .body {
   width: 100%;
   max-width: 1920px;
   min-width: 300px;
+}
+@media screen and (min-width: 992px) {
+  .body {
+    margin: auto;
+  }
 }
 
 .main {
